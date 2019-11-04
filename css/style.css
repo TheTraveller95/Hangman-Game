@@ -1,0 +1,26 @@
+.main-title {
+    text-align: center;
+    color: red;
+    padding-bottom: 5%;
+    padding-top: 1.5%;
+}
+
+#ahorcado-box {
+    background-color: blue;
+    height: 350px;
+    border: 5px solid black;
+    margin-bottom: 2%;
+    margin-top: 4%;
+}
+
+#words-box {
+    background-color: violet;
+    height: 350px;
+    border: 5px solid black;
+    margin-bottom: 2%;
+    margin-top: 4%;
+}
+
+.div-social {
+    text-align: center;
+}
