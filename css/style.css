@@ -63,12 +63,42 @@
 }
 
 #game-box {
-    border: solid black;
+    /*border: solid black;*/
     width: 99vw;
-    height: 400px;
-
+    text-align: center;
 }
 
 #hangman-game {
     height: 20em;
+}
+
+#letterBank {
+    padding-top: 50px;
+}
+
+#a,#b,#c,#d,#e,#f,
+#g,#h,#i,#j,#k,#l,#m,#n,#o,#p,#q,
+#r,#s,#t,#u,#v,#w,#x,#y,#z {
+    border: solid grey;
+    background-color: blue;
+    color: white;
+    text-align: center;
+    padding-left:0;
+    padding-right: 0;
+    margin: 2% 2%;
+}
+
+#game-title {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding-top: 10%;
+    padding-bottom: 5%;
+}
+
+#start {
+    text-align: center;
+    padding-top: 10%;
 }

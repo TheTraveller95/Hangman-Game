@@ -55,13 +55,47 @@
     </div><!--end of home-page-->
 
     <div id="game-page" class="container"> <!--game-page-->
-        <h1>Guess the word!</h1>
+        <h1 id="game-title">Guess the word!</h1>
         <div id="game-box" class="col-12">
             <canvas id="hangman-game" class="col-12"></canvas>
             <div id="guess-word" class="col-12">hola</div>
-            <div id="letters" class="col-12">abcdefghilmnopqrstuvz</div>
+            <div id="letters" class="col-12">
+                <div id="letterBank" class="row">
+                    <span id="a" class="col-1" value="A" onclick="guessLetter()">A</span>
+                    <span id="b" class="col-1" value="B" onclick="guessLetter()">B</span>
+                    <span id="c" class="col-1" value="C" onclick="guessLetter()">C</span>
+                    <span id="d" class="col-1" value="D" onclick="guessLetter()">D</span>
+                    <span id="e" class="col-1" value="E" onclick="guessLetter()">E</span>
+                    <span id="f" class="col-1" value="F" onclick="guessLetter()">F</span>
+                    <span id="g" class="col-1" value="G" onclick="guessLetter()">G</span>
+                    <span id="h" class="col-1" value="H" onclick="guessLetter()">H</span>
+                    <span id="i" class="col-1" value="I" onclick="guessLetter()">I</span>
+                    <span id="j" class="col-1" value="J" onclick="guessLetter()">J</span>
+                    <span id="k" class="col-1" value="K" onclick="guessLetter()">K</span>
+                    <span id="l" class="col-1" value="L" onclick="guessLetter()">L</span>
+                    <span id="m" class="col-1" value="M" onclick="guessLetter()">M</span>
+                    <span id="n" class="col-1" value="N" onclick="guessLetter()">N</span>
+                    <span id="o" class="col-1" value="O" onclick="guessLetter()">O</span>
+                    <span id="p" class="col-1" value="P" onclick="guessLetter()">P</span>
+                    <span id="q" class="col-1" value="Q" onclick="guessLetter()">Q</span>
+                    <span id="r" class="col-1" value="R" onclick="guessLetter()">R</span>
+                    <span id="s" class="col-1" value="S" onclick="guessLetter()">S</span>
+                    <span id="t" class="col-1" value="T" onclick="guessLetter()">T</span>
+                    <span id="u" class="col-1" value="U" onclick="guessLetter()">U</span>
+                    <span id="v" class="col-1" value="V" onclick="guessLetter()">V</span>
+                    <span id="w" class="col-1" value="W" onclick="guessLetter()">W</span>
+                    <span id="x" class="col-1" value="X" onclick="guessLetter()">X</span>
+                    <span id="y" class="col-1" value="Y" onclick="guessLetter()">Y</span>
+                    <span id="z" class="col-1" value="Z" onclick="guessLetter()">Z</span>
+                </div>
+            </div>
+        </div>
+        <div id="start">
+            <button type="button" class="btn btn-primary btn-lg" id="start-button">Start!</button>
         </div>
     </div>
+
+
 
     <footer class="footer" id="footer-section">
         <div class="row div-social">

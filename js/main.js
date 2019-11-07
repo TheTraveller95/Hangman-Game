@@ -1,7 +1,6 @@
 var wordsIndex = ["mouse","computer","desk","smartphone","apple pencil", "monitor"];
 
 document.onload=firstLoading();
-//document.getElementById("play-now-link").onclick = playNow();
 
 function firstLoading(){
     document.getElementById("home-page");
