@@ -16,6 +16,18 @@ $("#play-now-link").click (function playNow(){
     draw1();
 })
 
+$("#start-button").click(function getRandomWord(){
+    var randomWord =Math.floor(Math.random() * wordsIndex.length);
+    var wordToBeGuest = wordsIndex[randomWord];
+    var usedWords = []
+
+        for(var i=0;i < 10;i++){
+            usedWords.push(wordToBeGuest);
+    }
+
+    console.log(usedWords);
+})
+
 
 function draw(){
     var ctx = document.getElementById("hangman-draw").getContext('2d');
