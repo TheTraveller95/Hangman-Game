@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"  />
     <link rel="stylesheet" href="css/all.css"  />
-    <script type="text/javascript" src="js/jquery.js"></script>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/149ba925ed.js"></script>
 
-    <title>Document</title>
+      <title>Document</title>
 </head>
 <body>
 
@@ -38,26 +39,34 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-md-6" id="ahorcado-box"></div>
-            <div class="col-md-6" id="words-box"></div>
+        <div class="ahorcado">
+            <box id="ahorcado-box" class="row">
+                <canvas id="ahorcado-draw" class="col-6 "></canvas>
+                <span id="play-now" class="col-6 ">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, a tempore aperiam rerum,
+                    quod sequi adipisci consequatur esse accusamus</p>
+                    <button type="button" class="btn btn-success play-now-button">
+                        <a href="#" id="play-now-link"> Play now! </a>
+                    </button>
+                </span>
+            </box>
         </div>
 
 
 
         <footer class="footer">
             <div class="row div-social">
-                <div class="col-md-4">
+                <div class="col-4">
                     <a href="https://twitter.com/andrecri22" target="_blank">
                         <i class="fab fa-twitter"></i>
                     </a>
                 </div>
-                <div class="col-md-4">
+                <div class="col-4">
                     <a href="https://www.linkedin.com/in/andrea-crivellaro-24a28613b/" target="_blank">
                         <i class="fab fa-linkedin"></i>
                     </a>
                 </div>
-                <div class="col-md-4">
+                <div class="col-4">
                     <a href="https://www.instagram.com/the_travelovers2018/?hl=en" target="_blank">
                         <i class="fab fa-instagram"></i>
                     </a>
