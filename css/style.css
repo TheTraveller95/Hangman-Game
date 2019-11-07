@@ -5,7 +5,7 @@
     padding-top: 1.5%;
 }
 
-#ahorcado-box {
+#hangman-box {
     /*background-color: blue;*/
     /*height: 350px;*/
     border: solid black;
@@ -35,13 +35,13 @@
     right: 20;
 }
 
-#ahorcado-draw {
+#hangman-draw {
     position: relative;
     height: 20em;
     margin: auto;
 }
 
-.ahorcado {
+.hangman {
     text-align: center;
 
 }
@@ -52,12 +52,12 @@
     text-align: center;
 }
 
-/*.play-now-button {
-
-}*/
+.play-now-button {
+    font-weight: 800;
+}
 
 #play-now-link {
     text-decoration: none;
     color: white;
-    font-weight: 800;
+
 }

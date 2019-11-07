@@ -1,7 +1,19 @@
 var wordsIndex = ["mouse","computer","desk","smartphone","apple pencil", "monitor"];
-draw();
+
+function firstLoading(){
+    document.getElementById("home-page");
+    document.getElementById("footer-section");
+    document.getElementById("game-page").style.display="none";
+    draw();
+}
+
+function playNow(){
+    document.getElementById("#game-page");
+}
+
+
 function draw(){
-    var ctx = document.getElementById("ahorcado-draw").getContext('2d');
+    var ctx = document.getElementById("hangman-draw").getContext('2d');
         ctx.fillStyle = "transparent";
         ctx.lineWidth=1.5;
         ctx.fillRect(0, 0, 100, 100);
