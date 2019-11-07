@@ -47,7 +47,7 @@
 }
 
 #play-now p {
-    padding-top: 15%;
+    padding-top: 30%;
     padding-right: 8%;
     text-align: center;
 }
@@ -60,4 +60,15 @@
     text-decoration: none;
     color: white;
 
+}
+
+#game-box {
+    border: solid black;
+    width: 99vw;
+    height: 400px;
+
+}
+
+#hangman-game {
+    height: 20em;
 }
