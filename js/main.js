@@ -19,13 +19,9 @@ $("#play-now-link").click (function playNow(){
 $("#start-button").click(function getRandomWord(){
     var randomWord =Math.floor(Math.random() * wordsIndex.length);
     var wordToBeGuest = wordsIndex[randomWord];
-    var usedWords = []
 
-        for(var i=0;i < 10;i++){
-            usedWords.push(wordToBeGuest);
-    }
+    document.getElementById('guess-word').innerHTML = wordToBeGuest;
 
-    console.log(usedWords);
 })
 
 
