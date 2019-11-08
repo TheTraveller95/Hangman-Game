@@ -1,4 +1,4 @@
-var wordsIndex = ["mouse","computer","desk","smartphone","apple pencil", "monitor"];
+var wordsIndex = ["m o u s e","c o m p u t e r","d e s k","s m a r t p h o n e","i p h o n e", "m o n i t o r"];
 
 document.onload=firstLoading();
 
@@ -17,10 +17,21 @@ $("#play-now-link").click (function playNow(){
 })
 
 $("#start-button").click(function getRandomWord(){
-    var randomWord =Math.floor(Math.random() * wordsIndex.length);
-    var wordToBeGuest = wordsIndex[randomWord];
+    var randomWord =Math.floor(Math.random() * wordsIndex.length); //get random index from the array
+    var wordToBeGuest = wordsIndex[randomWord]; //get the word related to the random index
+    var splitLettersArray = []
+    var splitLetters = wordToBeGuest.split(" ");
+    splitLettersArray.push(splitLetters);
+    var newSplitLetterArray = splitLetters.slice() //ne array for not chainging the original one
+    var i
+    for (i=0;i<newSplitLetterArray.length;i++){ //replace the element inside the clone array with a _
+        newSplitLetterArray[i]="_"
+    }
+    var underscore = newSplitLetterArray.toString().replace(/,/gi, " ")
 
-    document.getElementById('guess-word').innerHTML = wordToBeGuest;
+    console.log(randomWord,wordToBeGuest);
+
+    document.getElementById('guess-word').innerHTML = underscore;
 
 })
 
