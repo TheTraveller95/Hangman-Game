@@ -32,8 +32,16 @@ $("#start-button").click(function getRandomWord(){
     console.log(randomWord,wordToBeGuest);
 
     document.getElementById('guess-word').innerHTML = underscore;
+    guessLetter();
 
 })
+
+function guessLetter (letter1){
+    var letterInTheWord = document.getElementsByClassName("letter");
+    if(letter1===letterInTheWord){
+        letterInTheWord.getAttribute("value").style.visibility = "visible";
+    }
+}
 
 
 function draw(){
