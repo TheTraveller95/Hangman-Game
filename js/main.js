@@ -1,4 +1,4 @@
-var wordsIndex = ["m o u s e","c o m p u t e r","d e s k","s m a r t p h o n e","i p h o n e", "m o n i t o r"];
+var wordsIndex = ["m o u s e","c o m p u t e r","d e s k","s m a r t p h o n e","i p h o n e", "m o n i t o r"]; //test words
 
 document.onload=firstLoading();
 
@@ -19,7 +19,7 @@ $("#play-now-link").click (function playNow(){
 $("#start-button").click(function getRandomWord(){
     var randomWord =Math.floor(Math.random() * wordsIndex.length); //get random index from the array
     var wordToBeGuest = wordsIndex[randomWord]; //get the word related to the random index
-    var splitLettersArray = []
+    splitLettersArray = []
     var splitLetters = wordToBeGuest.split(" ");
     splitLettersArray.push(splitLetters);
     var newSplitLetterArray = splitLetters.slice() //ne array for not chainging the original one
@@ -36,11 +36,27 @@ $("#start-button").click(function getRandomWord(){
 
 })
 
-function guessLetter (letter1){
-    var letterInTheWord = document.getElementsByClassName("letter");
-    if(letter1===letterInTheWord){
-        letterInTheWord.getAttribute("value").style.visibility = "visible";
+function guessLetter (){
+    //var letterInTheWord = document.getElementsByClassName("letter");
+    var i;
+    //var letter =document.getElementsByClassName("letter");
+    for(i=0; i<splitLettersArray.length; i++){
+
+        for(i=0;i<27;i++){
+            var letter =document.getElementsByClassName("letter");
+            if(letter[i].id===splitLettersArray[i]){
+                //document.getElementsByClassName("letter").value.style.display = "block";
+                console.log(letter[i].id)
+            } else {
+            console.log(Error)
+            }
+        }
     }
+    /*for(i=0;i<27;i++){
+    var letter =document.getElementsByClassName("letter");
+    console.log(letter[i].id)
+    }*/
+
 }
 
 
