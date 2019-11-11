@@ -36,27 +36,16 @@ $("#start-button").click(function getRandomWord(){
 
 })
 
-function guessLetter (){
-    //var letterInTheWord = document.getElementsByClassName("letter");
+function guessLetter (letter){
     var i;
-    //var letter =document.getElementsByClassName("letter");
-    for(i=0; i<splitLettersArray.length; i++){
-
-        for(i=0;i<27;i++){
-            var letter =document.getElementsByClassName("letter");
-            if(letter[i].id===splitLettersArray[i]){
-                //document.getElementsByClassName("letter").value.style.display = "block";
-                console.log(letter[i].id)
-            } else {
-            console.log(Error)
-            }
-        }
-    }
-    /*for(i=0;i<27;i++){
-    var letter =document.getElementsByClassName("letter");
-    console.log(letter[i].id)
-    }*/
-
+    for(i=0;i<splitLettersArray.length;i++){        
+       var test = splitLettersArray[i].includes(letter)
+       if (test==true){
+            console.log(letter)
+        } else {
+            console.log('wrong letter')
+        } 
+    } 
 }
 
 
