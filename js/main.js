@@ -22,16 +22,17 @@ $("#start-button").click(function getRandomWord(){
     splitLettersArray = []
     var splitLetters = wordToBeGuest.split(" ");
     splitLettersArray.push(splitLetters);
-    var newSplitLetterArray = splitLetters.slice() //ne array for not chainging the original one
+    newSplitLetterArray = splitLetters.slice() //ne array for not chainging the original one
     var i
     for (i=0;i<newSplitLetterArray.length;i++){ //replace the element inside the clone array with a _
         newSplitLetterArray[i]="_"
     }
-    underscore = newSplitLetterArray.toString().replace(/,/gi, " ")
+    var underscore = newSplitLetterArray.toString().replace(/,/gi, " ")
+    underscore2 = underscore.split()
 
     console.log(randomWord,wordToBeGuest);
 
-    document.getElementById('guess-word').innerHTML = underscore;
+    document.getElementById('guess-word').innerHTML = underscore2;
     guessLetter();
 
 })
@@ -44,10 +45,13 @@ function guessLetter (letter){
        if (test==true){
            /*underscoreArray = []
            underscoreArray.push(underscore)*/
-            var test =underscore.replace(/" "/gi, ",")
-            var letterGuest = test.split().replace(underscore[i],letter)
-            letterGuest[i]=letter
-            document.getElementById('guess-word').innerHTML = letterGuest;
+           var newSplitLetterArray2 = newSplitLetterArray.slice()
+           var t;
+            for(t=0;t<newSplitLetterArray2.length;t++){
+            var underscore3 = newSplitLetterArray2.splice(newSplitLetterArray2[t],1,letter)
+            document.getElementById('guess-word').innerHTML = newSplitLetterArray2.toString().replace(/,/gi, " ");
+            } console.log(newSplitLetterArray2)
+            
             /*for(i=0;i<underscoreArray.length;i++){ 
             
             
