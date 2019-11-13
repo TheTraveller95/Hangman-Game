@@ -28,7 +28,7 @@ $("#start-button").click(function getRandomWord(){
         newSplitLetterArray[i]="_"
     }
     var underscore = newSplitLetterArray.toString().replace(/,/gi, " ")
-    underscore2 = underscore.split()
+    var underscore2 = underscore.split()
 
     console.log(randomWord,wordToBeGuest);
 
@@ -39,23 +39,21 @@ $("#start-button").click(function getRandomWord(){
 
 function guessLetter (letter){
     var i;
+    var l = letter
+    
     for(i=0;i<splitLettersArray.length;i++){        
        var test = splitLettersArray[i].includes(letter)
-       var i;
+       var index = splitLettersArray.indexOf(l)
+
        if (test==true){
-           /*underscoreArray = []
-           underscoreArray.push(underscore)*/
-           var newSplitLetterArray2 = newSplitLetterArray.slice()
-           var t;
-            for(t=0;t<newSplitLetterArray2.length;t++){
-            var underscore3 = newSplitLetterArray2.splice(newSplitLetterArray2[t],1,letter)
-            document.getElementById('guess-word').innerHTML = newSplitLetterArray2.toString().replace(/,/gi, " ");
-            } console.log(newSplitLetterArray2)
-            
-            /*for(i=0;i<underscoreArray.length;i++){ 
-            
-            
+           //var t;
+            /*for(t=0;t<splitLettersArray.length;t++){
+                
+            //var underscore3 = newSplitLetterArray2.splice(test1,1,letter)
+            //document.getElementById('guess-word').innerHTML = newSplitLetterArray2.toString().replace(/,/gi, " ");
             }*/
+            console.log(splitLettersArray); console.log(index); console.log(l);
+
         } else {
             console.log('wrong letter')
         } 
