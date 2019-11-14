@@ -39,22 +39,38 @@ $("#start-button").click(function getRandomWord(){
 
 function guessLetter (letter){
     var i;
-    var l = letter
+    //var l = letter
     
-    for(i=0;i<splitLettersArray.length;i++){        
-       var test = splitLettersArray[i].includes(letter)
-       var newSplitLettersArray = splitLettersArray.slice()
-       var wordArray = newSplitLettersArray.toString().replace(/,/gi, "")
-       var index = wordArray.indexOf(l)
+    for(i=0;i<splitLettersArray.length;i++){ 
 
-       if (test==true){
-           //var t;
-            /*for(t=0;t<splitLettersArray.length;t++){
-                
-            //var underscore3 = newSplitLetterArray2.splice(test1,1,letter)
-            //document.getElementById('guess-word').innerHTML = newSplitLetterArray2.toString().replace(/,/gi, " ");
-            }*/
-            console.log(wordArray); console.log(index); console.log(l);
+        var test = splitLettersArray[i].includes(letter)
+
+        if (test==true){
+
+            function correctLetterFunction (){
+
+                /*var correctLetterArray =*/ newSplitLetterArray.slice()
+                var indices = [];
+                var newSplitLettersArray2 = splitLettersArray.slice();
+                var wordArray = newSplitLettersArray2.toString().replace(/,/gi, "");
+                var l = letter;
+                var idx = wordArray.indexOf(l);
+                while (idx != -1) {
+                indices.push(idx);
+                idx = wordArray.indexOf(l, idx + 1);
+                }
+                console.log(indices);
+                var t;
+
+                for(t=0;t<indices.length;t++){
+                    
+                newSplitLetterArray.splice(indices[t],1,letter)
+                }
+                return newSplitLetterArray.toString().replace(/,/gi, " ");   
+            }
+
+            var myVar = correctLetterFunction()
+            document.getElementById('guess-word').innerHTML = myVar
 
         } else {
             console.log('wrong letter')
