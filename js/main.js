@@ -43,7 +43,9 @@ function guessLetter (letter){
     
     for(i=0;i<splitLettersArray.length;i++){        
        var test = splitLettersArray[i].includes(letter)
-       var index = splitLettersArray.indexOf(l)
+       var newSplitLettersArray = splitLettersArray.slice()
+       var wordArray = newSplitLettersArray.toString().replace(/,/gi, "")
+       var index = wordArray.indexOf(l)
 
        if (test==true){
            //var t;
@@ -52,7 +54,7 @@ function guessLetter (letter){
             //var underscore3 = newSplitLetterArray2.splice(test1,1,letter)
             //document.getElementById('guess-word').innerHTML = newSplitLetterArray2.toString().replace(/,/gi, " ");
             }*/
-            console.log(splitLettersArray); console.log(index); console.log(l);
+            console.log(wordArray); console.log(index); console.log(l);
 
         } else {
             console.log('wrong letter')
