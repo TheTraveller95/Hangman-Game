@@ -1,6 +1,8 @@
 var wordsIndex = ["m o u s e","c o m p u t e r","d e s k","s m a r t p h o n e","i p h o n e", "m o n i t o r"]; //test words
 
 document.onload=firstLoading();
+wrongLetterArray = []
+newWrongLetterArray = wrongLetterArray.slice()
 
 function firstLoading(){
     document.getElementById("home-page");
@@ -72,12 +74,89 @@ function guessLetter (letter){
             var myVar = correctLetterFunction()
             document.getElementById('guess-word').innerHTML = myVar
 
-        } else {
-            console.log('wrong letter')
-        } 
+        } else{ 
+            newWrongLetterArray.splice(0,0,letter);
+            hangman();
+            console.log(newWrongLetterArray)
+        }
+         
     } 
 }
 
+function hangman(){
+    if(newWrongLetterArray.length==2){
+        var ctx = document.getElementById("hangman-game").getContext('2d');
+            ctx.fillStyle = "transparent";
+            ctx.lineWidth=1.5;
+            ctx.fillRect(0, 0, 300, 200);
+            ctx.beginPath();
+            ctx.arc(220,60,10,0,2*Math.PI)
+            ctx.stroke();
+    }
+
+    if(newWrongLetterArray.length==3){
+        var ctx = document.getElementById("hangman-game").getContext('2d');
+            ctx.fillStyle = "transparent";
+            ctx.lineWidth=1.5;
+            ctx.fillRect(0, 0, 300, 200);
+            ctx.beginPath();
+            ctx.moveTo(220,70);
+            ctx.lineTo(220,90);
+            ctx.stroke();
+    }
+
+    if(newWrongLetterArray.length==4){
+        var ctx = document.getElementById("hangman-game").getContext('2d');
+            ctx.fillStyle = "transparent";
+            ctx.lineWidth=1.5;
+            ctx.fillRect(0, 0, 300, 200);
+            ctx.beginPath();
+            ctx.moveTo(220,70);
+            ctx.lineTo(205,80);
+            ctx.stroke();
+    }
+
+    if(newWrongLetterArray.length==5){
+        var ctx = document.getElementById("hangman-game").getContext('2d');
+            ctx.fillStyle = "transparent";
+            ctx.lineWidth=1.5;
+            ctx.fillRect(0, 0, 300, 200);
+            ctx.beginPath();
+            ctx.moveTo(220,70);
+            ctx.lineTo(235,80);
+            ctx.stroke();
+    }
+
+    if(newWrongLetterArray.length==6){
+        var ctx = document.getElementById("hangman-game").getContext('2d');
+            ctx.fillStyle = "transparent";
+            ctx.lineWidth=1.5;
+            ctx.fillRect(0, 0, 300, 200);
+            ctx.beginPath();
+            ctx.moveTo(220,90);
+            ctx.lineTo(235,105);
+            ctx.stroke();
+    }
+
+    if(newWrongLetterArray.length==7){
+       var ctx = document.getElementById("hangman-game").getContext('2d');
+            ctx.fillStyle = "transparent";
+            ctx.lineWidth=1.5;
+            ctx.fillRect(0, 0, 300, 200);
+            ctx.beginPath();
+            ctx.moveTo(220,90);
+            ctx.lineTo(205,105);
+            ctx.stroke();
+    }
+
+    if(newWrongLetterArray.length==7){
+       alert("you have one more shot")
+    }
+
+    if(newWrongLetterArray.length==8){
+       alert("you lost: GAME OVER")
+    }
+}
 
 function draw(){
     var ctx = document.getElementById("hangman-draw").getContext('2d');
