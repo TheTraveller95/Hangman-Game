@@ -8,6 +8,9 @@ function firstLoading(){
     document.getElementById("home-page");
     document.getElementById("footer-section");
     document.getElementById("game-page").style.display="none";
+    document.getElementById('navbarTogglerDemo03').style.display= 'none';
+    document.getElementById('home').style.fontWeight= 'bold';
+    document.getElementById('game').style.fontWeight= 'normal';
     draw();
 }
 
@@ -17,6 +20,29 @@ $("#play-now-link").click (function playNow(){
     document.getElementById("game-page").style.display="block";
     draw1();
 })
+
+$('#home').click(function(){
+    document.getElementById("home-page").style.display='block';
+    document.getElementById("footer-section").style.display='block';
+    document.getElementById("game-page").style.display="none";
+    document.getElementById('navbarTogglerDemo03').style.display= 'none';
+    document.getElementById('home').style.fontWeight= 'bold';
+    document.getElementById('game').style.fontWeight= 'normal';
+
+    draw();
+})
+
+$('#game').click(function(){
+    document.getElementById("home-page").style.display="none";
+    document.getElementById("footer-section");
+    document.getElementById("game-page").style.display="block";
+    document.getElementById('navbarTogglerDemo03').style.display= 'none';
+    document.getElementById('game').style.fontWeight= 'bold';
+    document.getElementById('home').style.fontWeight= 'normal';
+    draw1();
+})
+
+
 
 $("#start-button").click(function getRandomWord(){
     var randomWord =Math.floor(Math.random() * wordsIndex.length); //get random index from the array
@@ -36,8 +62,6 @@ $("#start-button").click(function getRandomWord(){
     console.log(randomWord,wordToBeGuest);
 
     document.getElementById('guess-word').innerHTML = underscore2;
-    /*document.getElementById(letter).style.backgroundColor="blue";
-    document.getElementById(letter).style.color="white";*/
     guessLetter();
     backToNormal();
 
@@ -160,20 +184,12 @@ function hangman(){
     }
 
     if(newWrongLetterArray.length==2){
-        /*var ctx = document.getElementById("hangman-game").getContext('2d');
-            ctx.fillStyle = "transparent";
-            ctx.lineWidth=1.5;
-            ctx.fillRect(0, 0, 300, 200);*/
             ctx.beginPath();
             ctx.arc(220,60,10,0,2*Math.PI)
             ctx.stroke();
     }
 
     if(newWrongLetterArray.length==3){
-        /*var ctx = document.getElementById("hangman-game").getContext('2d');
-            ctx.fillStyle = "transparent";
-            ctx.lineWidth=1.5;
-            ctx.fillRect(0, 0, 300, 200);*/
             ctx.beginPath();
             ctx.moveTo(220,70);
             ctx.lineTo(220,90);
@@ -181,10 +197,6 @@ function hangman(){
     }
 
     if(newWrongLetterArray.length==4){
-        /*var ctx = document.getElementById("hangman-game").getContext('2d');
-            ctx.fillStyle = "transparent";
-            ctx.lineWidth=1.5;
-            ctx.fillRect(0, 0, 300, 200);*/
             ctx.beginPath();
             ctx.moveTo(220,70);
             ctx.lineTo(205,80);
@@ -192,10 +204,6 @@ function hangman(){
     }
 
     if(newWrongLetterArray.length==5){
-        /*var ctx = document.getElementById("hangman-game").getContext('2d');
-            ctx.fillStyle = "transparent";
-            ctx.lineWidth=1.5;
-            ctx.fillRect(0, 0, 300, 200);*/
             ctx.beginPath();
             ctx.moveTo(220,70);
             ctx.lineTo(235,80);
@@ -203,10 +211,6 @@ function hangman(){
     }
 
     if(newWrongLetterArray.length==6){
-        /*var ctx = document.getElementById("hangman-game").getContext('2d');
-            ctx.fillStyle = "transparent";
-            ctx.lineWidth=1.5;
-            ctx.fillRect(0, 0, 300, 200);*/
             ctx.beginPath();
             ctx.moveTo(220,90);
             ctx.lineTo(235,105);
@@ -214,10 +218,6 @@ function hangman(){
     }
 
     if(newWrongLetterArray.length==7){
-       /*var ctx = document.getElementById("hangman-game").getContext('2d');
-            ctx.fillStyle = "transparent";
-            ctx.lineWidth=1.5;
-            ctx.fillRect(0, 0, 300, 200);*/
             ctx.beginPath();
             ctx.moveTo(220,90);
             ctx.lineTo(205,105);
@@ -287,3 +287,7 @@ function draw1(){
             ctx.lineTo(70,20);
             ctx.stroke();
 }
+
+$('#hamburger').click(function(){
+    $('#navbarTogglerDemo03').slideToggle()
+})

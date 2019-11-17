@@ -1,5 +1,5 @@
 body {
-    padding-left: 10px;
+    padding-left: auto;
 }
 
 .container {
@@ -109,4 +109,12 @@ footer {
 #start {
     text-align: center;
     padding-top: 10%;
+}
+
+#home, #game {
+    color: black;
+}
+
+.navbar {
+    background-color: blue;
 }
