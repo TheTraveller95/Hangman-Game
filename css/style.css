@@ -2,6 +2,8 @@ body {
     padding-left: auto;
 }
 
+/*------------------------------Home page-------------------------*/
+
 .container {
     text-align: center;
 }
@@ -13,9 +15,19 @@ body {
     padding-top: 1.5%;
 }
 
+.how-to-play, .game-story {
+    text-align: justify;
+}
+
+.how-to-play > h3 {
+    text-align: center;
+}
+
+.game-story > h3 {
+    text-align: center;
+}
+
 #hangman-box {
-    /*background-color: blue;*/
-    /*height: 350px;*/
     border: solid black;
     margin-bottom: 2%;
     margin-top: 4%;
@@ -25,17 +37,15 @@ body {
 
 }
 
-#words-box {
+/*#words-box {
     background-color: violet;
     height: 350px;
     border: 5px solid black;
     margin-bottom: 2%;
     margin-top: 4%;
-}
+}*/
 
-.div-social {
-    text-align: center;
-}
+
 
 #play-now {
     position: relative;
@@ -51,7 +61,6 @@ body {
 
 .hangman {
     text-align: center;
-
 }
 
 #play-now p {
@@ -69,6 +78,8 @@ body {
     color: white;
 
 }
+
+/*----------------------------game page-----------------------*/
 
 #game-box {
     /*border: solid black;*/
@@ -102,8 +113,12 @@ body {
 
 footer {
     text-align: center;
-    padding-top: 10%;
+    padding-top: 7%;
     padding-bottom: 5%;
+}
+
+.div-social {
+    text-align: center;
 }
 
 #start {
@@ -117,4 +132,13 @@ footer {
 
 .navbar {
     background-color: blue;
+}
+
+@media (min-width: 800px) {
+    .hangman {
+        width: 50%;
+        margin-left: 25%;
+        margin-right: 25%;
+        padding-top: 5%;
+    }
 }
