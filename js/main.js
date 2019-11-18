@@ -18,6 +18,8 @@ $("#play-now-link").click (function playNow(){
     document.getElementById("home-page").style.display="none";
     document.getElementById("footer-section");
     document.getElementById("game-page").style.display="block";
+    document.getElementById("game").style.fontWeight= 'bold';
+    document.getElementById('home').style.fontWeight= 'normal';
     draw1();
 })
 
@@ -28,7 +30,7 @@ $('#home').click(function(){
     document.getElementById('navbarTogglerDemo03').style.display= 'none';
     document.getElementById('home').style.fontWeight= 'bold';
     document.getElementById('game').style.fontWeight= 'normal';
-
+    
     draw();
 })
 
@@ -179,7 +181,7 @@ function hangman(){
     draw1();
 
     if(newWrongLetterArray.length==1){
-        ctx.fillStyle="white";
+        ctx.fillStyle="rgb(255, 212, 92)";
         ctx.fillRect(200,45,50,65)
     }
 

@@ -1,11 +1,20 @@
+html {
+    background-color: rgb(255, 212, 92);
+}
+
 body {
     padding-left: auto;
+    background-color: transparent !important;
 }
 
 /*------------------------------Home page-------------------------*/
 
 .container {
     text-align: center;
+}
+
+.navbar {
+    background-color: rgb(232, 178, 34);
 }
 
 .main-title {
@@ -34,7 +43,6 @@ body {
     margin-left: 0;
     margin-right: 0;
     width: 99%;
-
 }
 
 /*#words-box {
@@ -77,6 +85,41 @@ body {
     text-decoration: none;
     color: white;
 
+}
+
+/*-------footer-------*/
+
+.footer {
+    position: static;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: transparent;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 12%;
+}
+
+.social {
+    text-align: center;
+    padding-right: 200px;
+    padding-left: 200px;
+}
+
+.div-social i  {
+    display: inline-block;
+    box-shadow: 0px 0px 2px #888;
+    background-color: rgba(153, 131, 7, 0.6);
+    color: rgba(6, 121, 228, 0.8);
+    width: 41px;
+    height: 41px;
+    padding-top: 7px;
+    border-radius: 50%;
+    font-size: 28px;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 2.5px;
+    margin-bottom: 2.5px;
 }
 
 /*----------------------------game page-----------------------*/
@@ -130,9 +173,7 @@ footer {
     color: black;
 }
 
-.navbar {
-    background-color: blue;
-}
+
 
 @media (min-width: 800px) {
     .hangman {
