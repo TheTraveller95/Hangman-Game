@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower:100,200,300,400,500,600,700|Odibee+Sans:100,200,300,400,500,600,700|Permanent+Marker:100,200,300,400,500,600,700|Tomorrow');
+
+
+
 html {
-    background-color: rgb(255, 212, 92);
+    /*background-color: rgb(255, 212, 92);*/
+    background-image: url(https://live.staticflickr.com/65535/49092283917_fcb988b4ed_z.jpg);
 }
 
 body {
@@ -13,8 +18,23 @@ body {
     text-align: center;
 }
 
-.navbar {
+#main-navbar {
     background-color: rgb(232, 178, 34);
+    font-family: 'Tomorrow', Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#hangman-nav {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 200%;
+    /*padding-bottom: 0.3em;
+    padding-right: 0.7em;*/
+}
+
+#home {
+    /*padding-right: 0.25em;*/
 }
 
 .main-title {
@@ -22,6 +42,7 @@ body {
     color: red;
     padding-bottom: 5%;
     padding-top: 1.5%;
+    font-family: 'indie flower', sans-serif;
 }
 
 .how-to-play, .game-story {
@@ -97,7 +118,7 @@ body {
     background-color: transparent;
     margin-bottom: 15px;
     margin-top: 15px;
-    padding-top: 12%;
+    padding-top: 4%;
 }
 
 .social {
@@ -180,6 +201,19 @@ footer {
         width: 50%;
         margin-left: 25%;
         margin-right: 25%;
-        padding-top: 5%;
+        padding-top: 2%;
+    }
+
+    .main-title >h1 {
+    font-size: 500%;
+    }
+
+    .main-title {
+    padding-bottom: 0.5%;
+    }
+
+    footer {
+        padding-bottom: 0.5%;
     }
 }
+
