@@ -1,29 +1,39 @@
-@import url('https://fonts.googleapis.com/css?family=Indie+Flower:100,200,300,400,500,600,700|Odibee+Sans:100,200,300,400,500,600,700|Permanent+Marker:100,200,300,400,500,600,700|Tomorrow');
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower:100,200,300,400,500,600,700|Odibee+Sans:100,200,300,400,500,600,700|Permanent+Marker:100,200,300,400,500,600,700|Tomorrow|Shadows+Into+Light');
 
 
 
 html {
     /*background-color: rgb(255, 212, 92);*/
     background-image: url(https://live.staticflickr.com/65535/49092283917_fcb988b4ed_z.jpg);
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100vw;
 }
 
 body {
     padding-left: auto;
-    background-color: transparent !important;
+    text-align: center;
+    background-color: rgba(30, 143, 7, 0.6) !important;
 }
 
 /*------------------------------Home page-------------------------*/
 
-.container {
+#main-div {
     text-align: center;
+    background-color: rgba(30, 143, 7, 0.6)
 }
 
 #main-navbar {
-    background-color: rgb(232, 178, 34);
+    background-color: rgba(30, 232, 12, 0.95);
     font-family: 'Tomorrow', Arial, Helvetica, sans-serif;
     font-size: 100%;
     padding-top: 0;
     padding-bottom: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
 }
 
 #hangman-nav {
@@ -33,28 +43,42 @@ body {
     padding-right: 0.7em;*/
 }
 
-#home {
-    /*padding-right: 0.25em;*/
-}
-
 .main-title {
     text-align: center;
-    color: red;
+    color: rgb(13, 255, 202);
     padding-bottom: 5%;
-    padding-top: 1.5%;
+    padding-top: 25%;
     font-family: 'indie flower', sans-serif;
+    font-weight: 900;
+    font-size: 10vw;
+    text-shadow: 3px 3px black;
 }
 
 .how-to-play, .game-story {
     text-align: justify;
+    background-color: rgba(214, 255, 245, 0.6);
 }
 
 .how-to-play > h3 {
     text-align: center;
+    font-style: italic;
 }
 
 .game-story > h3 {
     text-align: center;
+    font-style: italic;
+}
+
+.how-to-play > p {
+    font-family: 'Shadows into light';
+    font-size: 1.19em;
+    font-weight: 600;
+}
+
+.game-story > p {
+    font-family: 'Shadows into light';
+    font-size: 1.19em;
+    font-weight: 600;
 }
 
 #hangman-box {
@@ -64,6 +88,7 @@ body {
     margin-left: 0;
     margin-right: 0;
     width: 99%;
+    background-color: rgba(214, 255, 245, 0.6);
 }
 
 /*#words-box {
@@ -99,14 +124,16 @@ body {
 }
 
 .play-now-button {
-    font-weight: 800;
-}
-
-#play-now-link {
+    font-weight: 800 !important;
     text-decoration: none;
-    color: white;
-
+    color: red !important;
+    background-color: yellow !important;
 }
+
+.play-now-button:hover {
+    background-color: rgb(255, 187, 0) !important;
+}
+
 
 /*-------footer-------*/
 
@@ -116,7 +143,7 @@ body {
     right: 0;
     left: 0;
     background-color: transparent;
-    margin-bottom: 15px;
+    margin-bottom: 0;
     margin-top: 15px;
     padding-top: 4%;
 }
@@ -127,10 +154,15 @@ body {
     padding-left: 200px;
 }
 
+.div-social {
+    width: 100%;
+    margin: auto !important;
+}
+
 .div-social i  {
     display: inline-block;
     box-shadow: 0px 0px 2px #888;
-    background-color: rgba(153, 131, 7, 0.6);
+    background-color: rgba(214, 255, 245, 0.6);
     color: rgba(6, 121, 228, 0.8);
     width: 41px;
     height: 41px;
@@ -142,6 +174,10 @@ body {
     margin-top: 2.5px;
     margin-bottom: 2.5px;
 }
+
+/*.div-social > .twitter {
+    padding-left: 8% !important;
+}*/
 
 /*----------------------------game page-----------------------*/
 
@@ -197,6 +233,12 @@ footer {
 
 
 @media (min-width: 800px) {
+
+    #main-div {
+        height: 100%;
+        width: 100%;
+    }
+
     .hangman {
         width: 50%;
         margin-left: 25%;
@@ -204,16 +246,29 @@ footer {
         padding-top: 2%;
     }
 
-    .main-title >h1 {
-    font-size: 500%;
-    }
 
     .main-title {
     padding-bottom: 0.5%;
+    text-align: center;
+    color: rgb(13, 255, 202);
+    padding-top: 5%;
+    font-family: 'indie flower', sans-serif;
+    font-weight: 900;
+    font-size: 8vw;
+    text-shadow: 3px 3px black;
     }
 
     footer {
         padding-bottom: 0.5%;
     }
+
+    .container {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    /*#home-page {
+        text-align: center !important;
+    }*/
 }
 
