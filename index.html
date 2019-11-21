@@ -83,11 +83,13 @@
         </div><!--end of home-page-->
 
         <div id="game-page" class="container"> <!--game-page-->
-            <h1 id="game-title">Guess the word!</h1>
-            <div id="game-box" class="col-12">
-                <canvas id="hangman-game" class="col-12"></canvas>
-                <div id="guess-word" class="col-12"></div>
-                <div id="letters" class="col-12">
+            <p id="game-title">Guess the word!</p>
+            <div id="game-box" class="row">
+                <div id="canvas-div" class="col-xl-6">
+                    <canvas id="hangman-game"></canvas>
+                </div>
+                <div id="letters" class="col-12 col-xl-6">
+                    <div id="guess-word" class="col-12"></div>
                     <div id="letterBank" class="row">
                         <button type="button" id="a" class="col-1 box" value="A" onclick="guessLetter('a'); ">A</button>
                         <button type="button" id="b" class="col-1 box" value="B" onclick="guessLetter('b'); ">B</button>
@@ -121,9 +123,10 @@
             <div id="start">
                 <button type="button" class="btn btn-primary btn-lg" id="start-button" onclick="backToNormal()">Start!</button>
             </div>
+            <div class="empty"></div>
         </div>
 
-
+        
 
         <footer class="footer" id="footer-section">
             <div class="row div-social">

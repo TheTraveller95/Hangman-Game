@@ -180,10 +180,10 @@ function hangman(){
 
     draw1();
 
-    if(newWrongLetterArray.length==1){
-        ctx.fillStyle="rgb(255, 212, 92)";
+    /*if(newWrongLetterArray.length==1){
+        ctx.fillStyle="rgba(30, 143, 7, 0.6)";
         ctx.fillRect(200,45,50,65)
-    }
+    }*/
 
     if(newWrongLetterArray.length==2){
             ctx.beginPath();
@@ -266,7 +266,7 @@ function draw(){
 function draw1(){
      ctx = document.getElementById("hangman-game").getContext('2d');
         ctx.fillStyle = "transparent";
-        ctx.lineWidth=1.5;
+        ctx.lineWidth=5;
         ctx.fillRect(0, 0, 300, 200);
         ctx.beginPath();//first bottom bar
             ctx.moveTo(20,130);

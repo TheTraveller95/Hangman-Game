@@ -3,11 +3,10 @@
 
 
 html {
-    /*background-color: rgb(255, 212, 92);*/
     background-image: url(https://live.staticflickr.com/65535/49092283917_fcb988b4ed_z.jpg);
     background-attachment: fixed;
-    height: 100vh;
-    width: 100vw;
+    /*height: 100vh;
+    width: 100vw;*/
 }
 
 body {
@@ -16,11 +15,18 @@ body {
     background-color: rgba(30, 143, 7, 0.6) !important;
 }
 
+#transiction {
+    color: transparent;
+    width: 100%;
+    font-size: 250%;
+    /*background-color: rgba(30, 143, 7, 0.6);*/
+}
+
 /*------------------------------Home page-------------------------*/
 
 #main-div {
     text-align: center;
-    background-color: rgba(30, 143, 7, 0.6)
+    /*background-color: rgba(30, 143, 7, 0.6)*/
 }
 
 #main-navbar {
@@ -183,12 +189,16 @@ body {
 
 #game-box {
     /*border: solid black;*/
-    width: 99vw;
     text-align: center;
 }
 
-#hangman-game {
-    height: 20em;
+#hangman-game{
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 20%;
+    padding-right: 10%;
+
 }
 
 #letterBank {
@@ -209,7 +219,28 @@ body {
 
 #game-title {
     text-align: center;
+    font-size: 200%;
+    padding-top: 20%;
+    color: rgb(13, 255, 202);
+    padding-bottom: 5%;
+    font-family: 'indie flower', sans-serif;
+    font-weight: 900;
+    text-shadow: 3px 3px black;
 }
+
+#guess-word {
+    color: red;
+    font-size: 150%;
+    font-weight: bold;
+    padding-top: 10%;
+    text-shadow: 1px 1px black;
+}
+
+.empty {
+    padding-top: 30%;
+}
+
+/*--------------------------------------footer--------------------*/
 
 footer {
     text-align: center;
@@ -232,7 +263,7 @@ footer {
 
 
 
-@media (min-width: 375px) and (max-width: 1024px) {
+@media (min-width: 376px) and (max-width: 1024px) {
     .main-title {
     text-align: center;
     color: rgb(13, 255, 202);
@@ -243,9 +274,35 @@ footer {
     font-size: 10vw;
     text-shadow: 3px 3px black;
     }
+
+    #game-title {
+    text-align: center;
+    font-size: 400%;
+    padding-top: 15%;
+    color: rgb(13, 255, 202);
+    padding-bottom: 2%;
+    font-family: 'indie flower', sans-serif;
+    font-weight: 900;
+    text-shadow: 3px 3px black;
+    }   
+
+    .empty {
+    padding-top: 10%;
+    }
 }
 
+@media (width: 1024px){ /*ipad pro*/
+    .hangman {
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+}
 
+@media (min-width: 1025px) and (max-width: 2251px) {
+    .empty {
+    padding-bottom: 14%;
+    }
+}
 
 @media (min-width: 1025px) {
 
@@ -273,6 +330,38 @@ footer {
     text-shadow: 3px 3px black;
     }
 
+    #game-title {
+    text-align: center;
+    font-size: 8vw;
+    padding-top: 5%;
+    color: rgb(13, 255, 202);
+    padding-bottom: 0.5%;
+    font-family: 'indie flower', sans-serif;
+    font-weight: 900;
+    text-shadow: 3px 3px black;
+    }   
+
+    #hangman-game {
+        height: 20em;
+        margin-left: 25%;
+        margin-right: 25%;
+        padding-left: 0;
+        padding-right: 0;
+        width: 40%;
+    }
+
+    #guess-word {
+    color: red;
+    font-size: 300%;
+    font-weight: bold;
+    padding-top: 0;
+    text-shadow: 1px 1px black;
+    }
+
+    .game-title {
+        margin-top: 25%;
+    }
+
     footer {
         padding-bottom: 0.5%;
     }
@@ -282,8 +371,12 @@ footer {
         margin-right: auto !important;
     }
 
-    /*#home-page {
-        text-align: center !important;
-    }*/
+    
+}
+
+@media (min-width: 2252px) {
+    .empty {
+    padding-top: 5%;
+    }
 }
 
