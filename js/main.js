@@ -16,6 +16,7 @@ function firstLoading(){
 
 $("#play-now-link").click (function playNow(){
     document.getElementById("home-page").style.display="none";
+    document.getElementById("you-won").style.display='none';
     document.getElementById("footer-section");
     document.getElementById("game-page").style.display="block";
     document.getElementById("game").style.fontWeight= 'bold';
@@ -36,6 +37,7 @@ $('#home').click(function(){
 
 $('#game').click(function(){
     document.getElementById("home-page").style.display="none";
+    document.getElementById("you-won").style.display='none';
     document.getElementById("footer-section");
     document.getElementById("game-page").style.display="block";
     document.getElementById('navbarTogglerDemo03').style.display= 'none';
@@ -97,7 +99,10 @@ function guessLetter (letter){
                     
                 newSplitLetterArray.splice(indices[t],1,letter)
                 }
-                return newSplitLetterArray.toString().replace(/,/gi, " ");   
+
+                xy = newSplitLetterArray.toString().replace(/,/gi, " ");
+                //console.log(ciao)
+                return xy;   
             }
 
             var myVar = correctLetterFunction()
@@ -105,7 +110,6 @@ function guessLetter (letter){
             
             document.getElementById(x).style.backgroundColor="green";
             document.getElementById(x).style.color="transparent";
-
 
         } else{ 
             newWrongLetterArray.splice(0,0,letter);
@@ -117,7 +121,21 @@ function guessLetter (letter){
         }
          
     } 
+    
+    var xyArray = xy.split(" ")
+    var i;
+    for(i-0;i<xyArray.length;i++){
+        won = xyArray.includes("_")
+        if(won == false){
+            //alert("you won")
+            var xyArray=[];
+            backToNormal();
+            happyman();
+            document.getElementById("you-won").style.display='block';
+        }
+    }
 }
+
 
 
 function backToNormal (){
@@ -234,6 +252,40 @@ function hangman(){
        alert("you lost: GAME OVER :(  Click OK to see the correct word");
        document.getElementById('guess-word').innerHTML=splitLettersArray.toString().replace(/,/gi, " ");
     }
+}
+
+function happyman(){
+    
+    draw1();
+
+    ctx.beginPath();
+            ctx.arc(220,75,10,0,2*Math.PI)
+            ctx.stroke();
+    
+    ctx.beginPath();
+            ctx.moveTo(220,85);
+            ctx.lineTo(220,105);
+            ctx.stroke();
+
+    ctx.beginPath();
+            ctx.moveTo(220,85);
+            ctx.lineTo(175,70);
+            ctx.stroke();
+
+    ctx.beginPath();
+            ctx.moveTo(220,85);
+            ctx.lineTo(265,70);
+            ctx.stroke();
+
+    ctx.beginPath();
+            ctx.moveTo(220,105);
+            ctx.lineTo(265,120);
+            ctx.stroke();
+
+    ctx.beginPath();
+            ctx.moveTo(220,105);
+            ctx.lineTo(175,120);
+            ctx.stroke();
 }
 
 function draw(){

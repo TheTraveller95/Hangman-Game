@@ -201,6 +201,13 @@ body {
 
 }
 
+#you-won {
+    text-align: center;
+    color: red;
+    font-weight: bold;
+    font-size: 200%;
+}
+
 #letterBank {
     padding-top: 50px;
 }
