@@ -39,19 +39,8 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6 col-lg-6 how-to-play">
-                        <h3>Game rules</h3>
-                        <p> The rule of this old but funny game are very simple: <br>
-                            Depending on the chosen level, the computer chooses from a list of words about different topics a random one. 
-                            The player has to guess what the word is one letter at a time. A number of dashes equivalent 
-                            to the number of letters in the word will be displayed. If the guessing player chooses a letter that occurs in the word, 
-                            the computer will replace the dash in the right places on the word. If the word does not contain 
-                            the suggested letter, one element of a hangman’s gallows will be displayed. As the game progresses, 
-                            a segment of the victim is added for every suggested letter not in the word. The number 
-                            of incorrect guesses before the game ends is 7.
-                        </p>
-                    </div>
-                    <div class="col-md-6 col-lg-6 game-story">
+                    
+                    <div class="col-md-12 col-lg-12 game-story">
                         <h3>Game story</h3>
                         <p> In 17th and 18th century Europe, criminals who were sentenced to death by hanging could demand the "Rite of Words 
                             and Life."
@@ -84,6 +73,18 @@
 
         <div id="game-page" class="container"> <!--game-page-->
             <p id="game-title">Guess the word!</p>
+            <div class="how-to-play">
+                <h3>Game rules</h3>
+                <p> The rule of this old but funny game are very simple: <br>
+                    Depending on the chosen level, the computer chooses from a list of words about different topics a random one. 
+                    The player has to guess what the word is one letter at a time. A number of dashes equivalent 
+                    to the number of letters in the word will be displayed. If the guessing player chooses a letter that occurs in the word, 
+                    the computer will replace the dash in the right places on the word. If the word does not contain 
+                    the suggested letter, one element of a hangman’s gallows will be displayed. As the game progresses, 
+                    a segment of the victim is added for every suggested letter not in the word. The number 
+                    of incorrect guesses before the game ends is 7.
+                </p>
+            </div>
             <div id="game-box" class="row">
                 <div id="canvas-div" class="col-xl-6">
                     <canvas id="hangman-game" class="col-xl-12"></canvas>
@@ -124,7 +125,7 @@
             <div id="start">
                 <button type="button" class="btn btn-primary btn-lg" id="start-button" onclick="backToNormal()">Start!</button>
             </div>
-            <div class="empty"></div>
+            <!---<div class="empty"></div>-->
         </div>
 
         

@@ -1,4 +1,6 @@
-var wordsIndex = ["m o u s e","c o m p u t e r","d e s k","s m a r t p h o n e","i p h o n e", "m o n i t o r"]; //test words
+var wordsIndex = ["m i a m i","g u a y a q u i l","d u b l i n","t u r i n","m o s c o w", "q u i t o","b e r l i n","p r a g u e","m i l a n","m a d r i d","l i s b o n","p a r i s","r o m e","b r a s i l i a","l i m a",
+"c h i c a g o","b o s t o n","s a n t i a g o","b o g o t a","t o k y o","p h i l a d e l p h i a","m a n h a t t a n","p a n a m a","t o r o n t o","b e i j i n g","l o n d o n","a m s t e r d a m","b a n g k o k","s y d n e y",
+"h o u s t o n","n a s h v i l l e","m o n t e r r e i","d u b a i","b e l f a s t","b a r c e l o n a","a t h e n s","o s l o","s i n g a p o r e","n a i r o b i","h o n o l u l u","c a l i","m o n t e v i d e o"]; //test words
 
 document.onload=firstLoading();
 wrongLetterArray = []
@@ -71,14 +73,14 @@ $("#start-button").click(function getRandomWord(){
 
 })
 
-function guessLetter (letter){
+function guessLetter (letter){ //function called once the letters are clicked
     var i;
     x = letter
     for(i=0;i<splitLettersArray.length;i++){ 
 
         var test = splitLettersArray[i].includes(letter)
 
-        if (test==true){
+        if (test==true){  //check if the word in the array contain the clicked letter
 
             function correctLetterFunction (){
 
@@ -97,27 +99,27 @@ function guessLetter (letter){
 
                 for(t=0;t<indices.length;t++){
                     
-                newSplitLetterArray.splice(indices[t],1,letter)
+                newSplitLetterArray.splice(indices[t],1,letter) //replace the "_" in the right location with the clicked letter
                 }
 
                 xy = newSplitLetterArray.toString().replace(/,/gi, " ");
                 //console.log(ciao)
-                return xy;   
+                return xy;
             }
 
             var myVar = correctLetterFunction()
-            document.getElementById('guess-word').innerHTML = myVar;
+            document.getElementById('guess-word').innerHTML = myVar; //it displays the word
             
-            document.getElementById(x).style.backgroundColor="green";
-            document.getElementById(x).style.color="transparent";
+            document.getElementById(x).style.backgroundColor="green"; //change the color of the clicked letter button 
+            document.getElementById(x).style.color="transparent"; //change the color of the clicked letter button 
 
         } else{ 
             newWrongLetterArray.splice(0,0,letter);
             hangman();
             
-            document.getElementById(x).style.backgroundColor="red";
-            document.getElementById(x).style.color="transparent";
-            console.log(newWrongLetterArray);    
+            document.getElementById(x).style.backgroundColor="red"; //change the color of the clicked letter button 
+            document.getElementById(x).style.color="transparent"; //change the color of the clicked letter button 
+            console.log(newWrongLetterArray);
         }
          
     } 
@@ -126,7 +128,7 @@ function guessLetter (letter){
     var i;
     for(i-0;i<xyArray.length;i++){
         won = xyArray.includes("_")
-        if(won == false){
+        if(won == false){ //check if the entire word has been guest
             //alert("you won")
             var xyArray=[];
             backToNormal();
@@ -139,6 +141,12 @@ function guessLetter (letter){
 
 
 function backToNormal (){
+
+    ctx =   document.getElementById("hangman-game").getContext('2d'); //clear the hangman drow
+            ctx.clearRect(175, 45, 90, 80);
+
+    document.getElementById("you-won").style.display='none';
+
     document.getElementById('a').style.backgroundColor="blue";
     document.getElementById('b').style.backgroundColor="blue";
     document.getElementById('c').style.backgroundColor="blue";
@@ -316,7 +324,7 @@ function draw(){
 }
 
 function draw1(){
-     ctx = document.getElementById("hangman-game").getContext('2d');
+    ctx = document.getElementById("hangman-game").getContext('2d');
         ctx.fillStyle = "transparent";
         ctx.lineWidth=5;
         ctx.fillRect(0, 0, 300, 200);
