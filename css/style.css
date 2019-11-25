@@ -70,12 +70,13 @@ body {
 .game-story > h3 {
     text-align: center;
     font-style: italic;
+    font-family: 'arial black'
 }
 
 
 
 .game-story > p {
-    font-family: 'Shadows into light';
+    font-family: 'arial black';
     font-size: 1.19em;
     font-weight: 600;
 }
@@ -120,6 +121,7 @@ body {
     padding-top: 30%;
     padding-right: 8%;
     text-align: center;
+    font-weight: bold;
 }
 
 .play-now-button {
@@ -181,16 +183,18 @@ body {
 /*----------------------------game page-----------------------*/
 
 .how-to-play > p {
-    font-family: 'Shadows into light';
+    font-family: 'arial black';
     font-size: 1.19em;
-    font-weight: 600;
+    font-weight: bold;
     padding-left: 5%;
     padding-right: 5%;
+    padding-bottom: 6%;
 }
 
 .how-to-play > h3 {
     text-align: center;
     font-style: italic;
+    font-family: 'arial black'
 }
 
 #game-box {
@@ -232,7 +236,7 @@ body {
 
 #game-title {
     text-align: center;
-    font-size: 200%;
+    font-size: 300%;
     padding-top: 20%;
     color: rgb(13, 255, 202);
     padding-bottom: 5%;
@@ -248,6 +252,10 @@ body {
     padding-top: 10%;
     text-shadow: 1px 1px black;
 }
+
+/*.how-to-play > p {
+        padding-bottom: 6%;
+    }*/
 
 .empty {
     padding-top: 30%;
@@ -299,6 +307,8 @@ footer {
     text-shadow: 3px 3px black;
     }   
 
+    
+
     .empty {
     padding-top: 10%;
     }
@@ -320,7 +330,7 @@ footer {
 @media (min-width: 1025px) {
 
     .how-to-play > p {
-    font-family: 'Shadows into light';
+    font-family: 'arial black';
     font-size: 1.19em;
     font-weight: 600;
     padding-left: 2%;
