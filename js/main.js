@@ -16,15 +16,32 @@ function firstLoading(){
     draw();
 }
 
-$("#play-now-link").click (function playNow(){
+function playNow(){
     document.getElementById("home-page").style.display="none";
     document.getElementById("you-won").style.display='none';
+    document.getElementById('you-lost').style.display = 'none';
     document.getElementById("footer-section");
     document.getElementById("game-page").style.display="block";
     document.getElementById("game").style.fontWeight= 'bold';
     document.getElementById('home').style.fontWeight= 'normal';
     draw1();
+}
+
+$("#play-now-link").click(function(){
+    playNow();
 })
+
+/*document.getElementsByClassName('box').addEventListener('click', function(){
+    if(getRandomWord ===undefined ){
+        alert('click on Start')
+    }
+})*/
+
+$('.box').click(function(){
+    if(newSplitLetterArray===undefined ){
+        alert('click on Start');
+    }
+}) // DO NOT WORK
 
 $('#home').click(function(){
     document.getElementById("home-page").style.display='block';
@@ -37,17 +54,9 @@ $('#home').click(function(){
     draw();
 })
 
-$('#game').click(function(){
-    document.getElementById("home-page").style.display="none";
-    document.getElementById("you-won").style.display='none';
-    document.getElementById("footer-section");
-    document.getElementById("game-page").style.display="block";
-    document.getElementById('navbarTogglerDemo03').style.display= 'none';
-    document.getElementById('game').style.fontWeight= 'bold';
-    document.getElementById('home').style.fontWeight= 'normal';
-    draw1();
+*$('#game').click(function(){
+    playNow();
 })
-
 
 
 $("#start-button").click(function getRandomWord(){
@@ -57,10 +66,11 @@ $("#start-button").click(function getRandomWord(){
     var splitLetters = wordToBeGuest.split(" ");
     splitLettersArray.push(splitLetters);
     newSplitLetterArray = splitLetters.slice() //ne array for not chainging the original one
-    var i
-    for (i=0;i<newSplitLetterArray.length;i++){ //replace the element inside the clone array with a _
+    /*for (let i=0;i<newSplitLetterArray.length;i++){ //replace the element inside the clone array with a _
         newSplitLetterArray[i]="_"
-    }
+    }*/
+
+    newSplitLetterArray.fill('_') //replace the element inside the clone array with a _
     var underscore = newSplitLetterArray.toString().replace(/,/gi, " ")
     var underscore2 = underscore.split()
     newWrongLetterArray=[]
@@ -73,10 +83,11 @@ $("#start-button").click(function getRandomWord(){
 
 })
 
+
+
 function guessLetter (letter){ //function called once the letters are clicked
-    var i;
     x = letter
-    for(i=0;i<splitLettersArray.length;i++){ 
+    for(let i=0;i<splitLettersArray.length;i++){ 
 
         var test = splitLettersArray[i].includes(letter)
 
@@ -95,15 +106,12 @@ function guessLetter (letter){ //function called once the letters are clicked
                 idx = wordArray.indexOf(l, idx + 1);
                 }
                 console.log(indices);
-                var t;
-
-                for(t=0;t<indices.length;t++){
+                for(let t=0;t<indices.length;t++){
                     
                 newSplitLetterArray.splice(indices[t],1,letter) //replace the "_" in the right location with the clicked letter
                 }
 
                 xy = newSplitLetterArray.toString().replace(/,/gi, " ");
-                //console.log(ciao)
                 return xy;
             }
 
@@ -112,6 +120,7 @@ function guessLetter (letter){ //function called once the letters are clicked
             
             document.getElementById(x).style.backgroundColor="green"; //change the color of the clicked letter button 
             document.getElementById(x).style.color="transparent"; //change the color of the clicked letter button 
+            document.getElementById(x).disabled= true; //disable the button after having cliked it
 
         } else{ 
             newWrongLetterArray.splice(0,0,letter);
@@ -119,14 +128,14 @@ function guessLetter (letter){ //function called once the letters are clicked
             
             document.getElementById(x).style.backgroundColor="red"; //change the color of the clicked letter button 
             document.getElementById(x).style.color="transparent"; //change the color of the clicked letter button 
+            document.getElementById(x).disabled= true; //disable the button after having cliked it
             console.log(newWrongLetterArray);
         }
          
     } 
     
     var xyArray = xy.split(" ")
-    var i;
-    for(i-0;i<xyArray.length;i++){
+    for(let i=0;i<xyArray.length;i++){
         won = xyArray.includes("_")
         if(won == false){ //check if the entire word has been guest
             //alert("you won")
@@ -146,70 +155,20 @@ function backToNormal (){
             ctx.clearRect(175, 45, 90, 80);
 
     document.getElementById("you-won").style.display='none';
+    document.getElementById('you-lost').style.display = 'none';
 
-    document.getElementById('a').style.backgroundColor="blue";
-    document.getElementById('b').style.backgroundColor="blue";
-    document.getElementById('c').style.backgroundColor="blue";
-    document.getElementById('d').style.backgroundColor="blue";
-    document.getElementById('e').style.backgroundColor="blue";
-    document.getElementById('f').style.backgroundColor="blue";
-    document.getElementById('g').style.backgroundColor="blue";
-    document.getElementById('h').style.backgroundColor="blue";
-    document.getElementById('i').style.backgroundColor="blue";
-    document.getElementById('j').style.backgroundColor="blue";
-    document.getElementById('k').style.backgroundColor="blue";
-    document.getElementById('l').style.backgroundColor="blue";
-    document.getElementById('m').style.backgroundColor="blue";
-    document.getElementById('n').style.backgroundColor="blue";
-    document.getElementById('o').style.backgroundColor="blue";
-    document.getElementById('p').style.backgroundColor="blue";
-    document.getElementById('q').style.backgroundColor="blue";
-    document.getElementById('r').style.backgroundColor="blue";
-    document.getElementById('s').style.backgroundColor="blue";
-    document.getElementById('t').style.backgroundColor="blue";
-    document.getElementById('u').style.backgroundColor="blue";
-    document.getElementById('v').style.backgroundColor="blue";
-    document.getElementById('w').style.backgroundColor="blue";
-    document.getElementById('x').style.backgroundColor="blue";
-    document.getElementById('y').style.backgroundColor="blue";
-    document.getElementById('z').style.backgroundColor="blue";
+    var letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 
-    document.getElementById('a').style.color="white";
-    document.getElementById('b').style.color="white";
-    document.getElementById('c').style.color="white";
-    document.getElementById('d').style.color="white";
-    document.getElementById('e').style.color="white";
-    document.getElementById('f').style.color="white";
-    document.getElementById('g').style.color="white";
-    document.getElementById('h').style.color="white";
-    document.getElementById('i').style.color="white";
-    document.getElementById('j').style.color="white";
-    document.getElementById('k').style.color="white";
-    document.getElementById('l').style.color="white";
-    document.getElementById('m').style.color="white";
-    document.getElementById('n').style.color="white";
-    document.getElementById('o').style.color="white";
-    document.getElementById('p').style.color="white";
-    document.getElementById('q').style.color="white";
-    document.getElementById('r').style.color="white";
-    document.getElementById('s').style.color="white";
-    document.getElementById('t').style.color="white";
-    document.getElementById('u').style.color="white";
-    document.getElementById('v').style.color="white";
-    document.getElementById('w').style.color="white";
-    document.getElementById('x').style.color="white";
-    document.getElementById('w').style.color="white";
-    document.getElementById('z').style.color="white";
+    letters.forEach(function (letter){
+        document.getElementById(letter).style.backgroundColor="blue";
+        document.getElementById(letter).style.color="white";
+        document.getElementById(letter).disabled = false;
+    })
 }
 
 function hangman(){
 
     draw1();
-
-    /*if(newWrongLetterArray.length==1){
-        ctx.fillStyle="rgba(30, 143, 7, 0.6)";
-        ctx.fillRect(200,45,50,65)
-    }*/
 
     if(newWrongLetterArray.length==2){
             ctx.beginPath();
@@ -258,6 +217,7 @@ function hangman(){
 
     if(newWrongLetterArray.length==8){
        alert("you lost: GAME OVER :(  Click OK to see the correct word");
+       document.getElementById('you-lost').style.display = 'block';
        document.getElementById('guess-word').innerHTML=splitLettersArray.toString().replace(/,/gi, " ");
     }
 }

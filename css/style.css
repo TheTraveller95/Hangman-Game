@@ -211,7 +211,7 @@ body {
 
 }
 
-#you-won {
+#you-won, #you-lost {
     text-align: center;
     color: red;
     font-weight: bold;
