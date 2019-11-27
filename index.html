@@ -22,27 +22,25 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
-                    <a class="nav-link" id="home" href="#">Home</a>
+                    <a class="nav-link" id="home" href="#home-page">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="game" href="#">Game page</a>
+                    <a class="nav-link" id="game" href="#game-page">Game page</a>
                 </li>
             </ul>
         </div>
     </nav>
 
-    <div id="main-div">
+    <main id="main-div">
         <div id="home-page" >
             <div class="container">
                 <div class="main-title">
                     <p>The Hangman Game</p>
                 </div>
-
-                <div class="row">
-                    
+                <section class="row"> 
                     <div class="col-md-12 col-lg-12 game-story">
                         <h3>Game story</h3>
-                        <p> In 17th and 18th century Europe, criminals who were sentenced to death by hanging could demand the "Rite of Words 
+                        <article> In 17th and 18th century Europe, criminals who were sentenced to death by hanging could demand the "Rite of Words 
                             and Life."
                             In the "Rite of Words and Life" a criminal to be hanged was strung up over a 5 legged stand, and a board with a series 
                             of short ropes representing a word was displayed. The Executioner would pick the word, and would use charcoal to mark 
@@ -52,9 +50,9 @@
                             not tried again on that crime.
                             The irony here was that almost all of those criminals were illiterate.
                             Either way, we have preserved that old tradition in our own small way.
-                        </p>
+                        </article>
                     </div>
-                </div>
+                </section>
 
                 <div class="hangman">
                     <box id="hangman-box" class="row">
@@ -62,7 +60,7 @@
                         <span id="play-now" class="col-6 ">
                             <p>Do you want to try this old game by yourself? Just click on the button below...it is completely FREE!!!</p>
                             <button type="button" id="play-now-link" class="btn btn-success play-now-button">
-                                Play now!
+                                <a href="#game-page"> Play now! </a>
                             </button>
                             </a>
                         </span>
@@ -73,9 +71,9 @@
 
         <div id="game-page" class="container"> <!--game-page-->
             <p id="game-title">Guess the word!</p>
-            <div class="how-to-play">
+            <section class="how-to-play">
                 <h3>Game rules</h3>
-                <p> The rule of this old but funny game are very simple: <br>
+                <article> The rule of this old but funny game are very simple: <br>
                     in order to start the game you just need to click on the Start button. Doing so, the computer chooses from a list of words a random one. 
                     The topic of this game is "Cities around the World"
                     You need to guess what the word is one letter at a time. A number of dashes equivalent 
@@ -85,8 +83,8 @@
                     a segment of the victim is added for every suggested letter not contained in the word. The number 
                     of incorrect guesses before the game ends is 7.
                     Good luck and...HAVE FUN!!
-                </p>
-            </div>
+                </article>
+            </section>
             <div id="game-box" class="row">
                 <div id="canvas-div" class="col-xl-6">
                     <canvas id="hangman-game" class="col-xl-12"></canvas>
@@ -128,32 +126,28 @@
             <div id="start">
                 <button type="button" class="btn btn-primary btn-lg" id="start-button" onclick="backToNormal()">Start!</button>
             </div>
-            <!---<div class="empty"></div>-->
         </div>
+    </main>
 
-        
-
-        <footer class="footer" id="footer-section">
-            <div class="row div-social">
-                <div class="col-4 twitter">
-                    <a href="https://twitter.com/andrecri22" target="_blank">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                </div>
-                <div class="col-4">
-                    <a href="https://www.linkedin.com/in/andrea-crivellaro-24a28613b/" target="_blank">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                </div>
-                <div class="col-4">
-                    <a href="https://www.instagram.com/the_travelovers2018/?hl=en" target="_blank">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </div>
+    <footer class="footer" id="footer-section">
+        <div class="row div-social">
+            <div class="col-4 twitter">
+                <a href="https://twitter.com/andrecri22" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
             </div>
-        </footer>
-        <script type="text/javascript" src="js/main.js"></script>
-    </div>
-    
+            <div class="col-4">
+                <a href="https://www.linkedin.com/in/andrea-crivellaro-24a28613b/" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+            <div class="col-4">
+                <a href="https://www.instagram.com/the_travelovers2018/?hl=en" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

@@ -20,6 +20,7 @@ function playNow(){
     document.getElementById("home-page").style.display="none";
     document.getElementById("you-won").style.display='none';
     document.getElementById('you-lost').style.display = 'none';
+    document.getElementById('navbarTogglerDemo03').style.display= 'none';
     document.getElementById("footer-section");
     document.getElementById("game-page").style.display="block";
     document.getElementById("game").style.fontWeight= 'bold';

@@ -75,7 +75,7 @@ body {
 
 
 
-.game-story > p {
+.game-story > article {
     font-family: 'arial black';
     font-size: 1.19em;
     font-weight: 600;
@@ -125,14 +125,25 @@ body {
 }
 
 .play-now-button {
-    font-weight: 800 !important;
+    /*font-weight: 800 !important;
     text-decoration: none;
-    color: red !important;
+    color: red !important;*/
     background-color: yellow !important;
 }
 
 .play-now-button:hover {
     background-color: rgb(255, 187, 0) !important;
+}
+
+.play-now-button>a {
+    font-weight: 800 !important;
+    text-decoration: none;
+    color: red !important;
+    background-color: transparent;
+}
+
+.play-now-button>a:hover {
+    text-decoration: none;
 }
 
 
@@ -182,7 +193,7 @@ body {
 
 /*----------------------------game page-----------------------*/
 
-.how-to-play > p {
+.how-to-play > article {
     font-family: 'arial black';
     font-size: 1.19em;
     font-weight: bold;
@@ -253,14 +264,6 @@ body {
     text-shadow: 1px 1px black;
 }
 
-/*.how-to-play > p {
-        padding-bottom: 6%;
-    }*/
-
-.empty {
-    padding-top: 30%;
-}
-
 /*--------------------------------------footer--------------------*/
 
 footer {
@@ -305,31 +308,38 @@ footer {
     font-family: 'indie flower', sans-serif;
     font-weight: 900;
     text-shadow: 3px 3px black;
-    }   
-
-    
-
-    .empty {
-    padding-top: 10%;
-    }
+    }  
 }
+
 
 @media (width: 1024px){ /*ipad pro*/
     .hangman {
         margin-left: 25%;
         margin-right: 25%;
     }
+
+    /*body {
+     height: 100vh;
+    }*/
 }
 
-@media (min-width: 1025px) and (max-width: 2251px) {
-    .empty {
-    padding-bottom: 14%;
-    }
-}
+/*@media (min-width: 1025px) and (max-width: 2251px) {
+
+}*/
 
 @media (min-width: 1025px) {
 
-    .how-to-play > p {
+    .how-to-play > article {
+    font-family: 'arial black';
+    font-size: 1.19em;
+    font-weight: 600;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 2%;
+    padding-top: 3%;
+    }
+
+    .game-story> article {
     font-family: 'arial black';
     font-size: 1.19em;
     font-weight: 600;
@@ -407,9 +417,5 @@ footer {
     
 }
 
-@media (min-width: 2252px) {
-    .empty {
-    padding-top: 5%;
-    }
-}
+
 
