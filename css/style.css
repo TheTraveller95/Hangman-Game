@@ -65,20 +65,19 @@ body {
     background-color: rgba(214, 255, 245, 0.6);
 }
 
-
-
 .game-story > h3 {
     text-align: center;
     font-style: italic;
-    font-family: 'arial black'
+    font-family: 'arial black';
+    padding-top: 1.5%;
 }
-
-
 
 .game-story > article {
     font-family: 'arial black';
     font-size: 1.19em;
     font-weight: 600;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 #hangman-box {
@@ -90,16 +89,6 @@ body {
     width: 99%;
     background-color: rgba(214, 255, 245, 0.6);
 }
-
-/*#words-box {
-    background-color: violet;
-    height: 350px;
-    border: 5px solid black;
-    margin-bottom: 2%;
-    margin-top: 4%;
-}*/
-
-
 
 #play-now {
     position: relative;
@@ -125,9 +114,6 @@ body {
 }
 
 .play-now-button {
-    /*font-weight: 800 !important;
-    text-decoration: none;
-    color: red !important;*/
     background-color: yellow !important;
 }
 
@@ -187,9 +173,6 @@ body {
     margin-bottom: 2.5px;
 }
 
-/*.div-social > .twitter {
-    padding-left: 8% !important;
-}*/
 
 /*----------------------------game page-----------------------*/
 
@@ -205,11 +188,11 @@ body {
 .how-to-play > h3 {
     text-align: center;
     font-style: italic;
-    font-family: 'arial black'
+    font-family: 'arial black';
+    padding-top: 1.5%;
 }
 
 #game-box {
-    /*border: solid black;*/
     text-align: center;
 }
 
@@ -224,7 +207,8 @@ body {
 
 #you-won, #you-lost {
     text-align: center;
-    color: red;
+    background-color: black;
+    color: yellow;
     font-weight: bold;
     font-size: 200%;
 }
@@ -257,11 +241,14 @@ body {
 }
 
 #guess-word {
+    background-color: rgba(0, 0, 0, 0.5);
     color: red;
     font-size: 150%;
     font-weight: bold;
     padding-top: 10%;
+    margin-top: 5%;
     text-shadow: 1px 1px black;
+    text-transform: uppercase;
 }
 
 /*--------------------------------------footer--------------------*/
@@ -309,6 +296,8 @@ footer {
     font-weight: 900;
     text-shadow: 3px 3px black;
     }  
+
+
 }
 
 
@@ -318,14 +307,11 @@ footer {
         margin-right: 25%;
     }
 
-    /*body {
-     height: 100vh;
-    }*/
+    #home-page {
+        height: calc(100vh - 138.15px)!important;
+    }
 }
 
-/*@media (min-width: 1025px) and (max-width: 2251px) {
-
-}*/
 
 @media (min-width: 1025px) {
 
@@ -413,7 +399,6 @@ footer {
         margin-left: auto !important;
         margin-right: auto !important;
     }
-
     
 }
 

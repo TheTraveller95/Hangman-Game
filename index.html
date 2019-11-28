@@ -25,7 +25,7 @@
                     <a class="nav-link" id="home" href="#home-page">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="game" href="#game-page">Game page</a>
+                    <a class="nav-link" id="game" href="#game-title">Game page</a>
                 </li>
             </ul>
         </div>
@@ -37,8 +37,7 @@
                 <div class="main-title">
                     <p>The Hangman Game</p>
                 </div>
-                <section class="row"> 
-                    <div class="col-md-12 col-lg-12 game-story">
+                <section class="game-story">
                         <h3>Game story</h3>
                         <article> In 17th and 18th century Europe, criminals who were sentenced to death by hanging could demand the "Rite of Words 
                             and Life."
@@ -51,7 +50,6 @@
                             The irony here was that almost all of those criminals were illiterate.
                             Either way, we have preserved that old tradition in our own small way.
                         </article>
-                    </div>
                 </section>
 
                 <div class="hangman">
@@ -60,7 +58,7 @@
                         <span id="play-now" class="col-6 ">
                             <p>Do you want to try this old game by yourself? Just click on the button below...it is completely FREE!!!</p>
                             <button type="button" id="play-now-link" class="btn btn-success play-now-button">
-                                <a href="#game-page"> Play now! </a>
+                                <a href="#game-title"> Play now! </a>
                             </button>
                             </a>
                         </span>
@@ -88,7 +86,7 @@
             <div id="game-box" class="row">
                 <div id="canvas-div" class="col-xl-6">
                     <canvas id="hangman-game" class="col-xl-12"></canvas>
-                    <div id="you-won">You Won!</div>
+                    <div id="you-won">YOU WON!!</div>
                     <div id="you-lost">GAME OVER :(</div>
                 </div>
                 <div id="letters" class="col-12 col-xl-6">

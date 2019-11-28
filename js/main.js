@@ -55,7 +55,7 @@ $('#home').click(function(){
     draw();
 })
 
-*$('#game').click(function(){
+$('#game').click(function(){
     playNow();
 })
 
@@ -67,16 +67,11 @@ $("#start-button").click(function getRandomWord(){
     var splitLetters = wordToBeGuest.split(" ");
     splitLettersArray.push(splitLetters);
     newSplitLetterArray = splitLetters.slice() //ne array for not chainging the original one
-    /*for (let i=0;i<newSplitLetterArray.length;i++){ //replace the element inside the clone array with a _
-        newSplitLetterArray[i]="_"
-    }*/
 
     newSplitLetterArray.fill('_') //replace the element inside the clone array with a _
     var underscore = newSplitLetterArray.toString().replace(/,/gi, " ")
     var underscore2 = underscore.split()
     newWrongLetterArray=[]
-
-    console.log(randomWord,wordToBeGuest);
 
     document.getElementById('guess-word').innerHTML = underscore2;
     guessLetter();
@@ -106,7 +101,6 @@ function guessLetter (letter){ //function called once the letters are clicked
                 indices.push(idx);
                 idx = wordArray.indexOf(l, idx + 1);
                 }
-                console.log(indices);
                 for(let t=0;t<indices.length;t++){
                     
                 newSplitLetterArray.splice(indices[t],1,letter) //replace the "_" in the right location with the clicked letter
@@ -130,7 +124,6 @@ function guessLetter (letter){ //function called once the letters are clicked
             document.getElementById(x).style.backgroundColor="red"; //change the color of the clicked letter button 
             document.getElementById(x).style.color="transparent"; //change the color of the clicked letter button 
             document.getElementById(x).disabled= true; //disable the button after having cliked it
-            console.log(newWrongLetterArray);
         }
          
     } 
@@ -139,7 +132,6 @@ function guessLetter (letter){ //function called once the letters are clicked
     for(let i=0;i<xyArray.length;i++){
         won = xyArray.includes("_")
         if(won == false){ //check if the entire word has been guest
-            //alert("you won")
             var xyArray=[];
             backToNormal();
             happyman();
@@ -217,7 +209,7 @@ function hangman(){
     }
 
     if(newWrongLetterArray.length==8){
-       alert("you lost: GAME OVER :(  Click OK to see the correct word");
+       alert("you lost: GAME OVER :(  Click START to keep playing");
        document.getElementById('you-lost').style.display = 'block';
        document.getElementById('guess-word').innerHTML=splitLettersArray.toString().replace(/,/gi, " ");
     }
