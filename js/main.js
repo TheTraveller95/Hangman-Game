@@ -124,8 +124,7 @@ function guessLetter (letter){ //function called once the letters are clicked
             document.getElementById(x).style.backgroundColor="red"; //change the color of the clicked letter button 
             document.getElementById(x).style.color="transparent"; //change the color of the clicked letter button 
             document.getElementById(x).disabled= true; //disable the button after having cliked it
-        }
-         
+        } 
     } 
     
     var xyArray = xy.split(" ")
