@@ -5,8 +5,6 @@
 html {
     background-image: url(https://live.staticflickr.com/65535/49092283917_fcb988b4ed_z.jpg);
     background-attachment: fixed;
-    /*height: 100vh;
-    width: 100vw;*/
 }
 
 body {
@@ -19,14 +17,12 @@ body {
     color: transparent;
     width: 100%;
     font-size: 250%;
-    /*background-color: rgba(30, 143, 7, 0.6);*/
 }
 
-/*------------------------------Home page-------------------------*/
+/*------------------------------nav bar-------------------------*/
 
 #main-div {
     text-align: center;
-    /*background-color: rgba(30, 143, 7, 0.6)*/
 }
 
 #main-navbar {
@@ -42,12 +38,16 @@ body {
     z-index: 1;
 }
 
+#home, #game {
+    color: black;
+}
+
 #hangman-nav {
     font-family: 'Permanent Marker', cursive;
     font-size: 200%;
-    /*padding-bottom: 0.3em;
-    padding-right: 0.7em;*/
 }
+
+/*---------------------------home page---------------------------*/
 
 .main-title {
     text-align: center;
@@ -133,45 +133,7 @@ body {
 }
 
 
-/*-------footer-------*/
 
-.footer {
-    position: static;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background-color: transparent;
-    margin-bottom: 0;
-    margin-top: 15px;
-    padding-top: 4%;
-}
-
-.social {
-    text-align: center;
-    padding-right: 200px;
-    padding-left: 200px;
-}
-
-.div-social {
-    width: 100%;
-    margin: auto !important;
-}
-
-.div-social i  {
-    display: inline-block;
-    box-shadow: 0px 0px 2px #888;
-    background-color: rgba(214, 255, 245, 0.6);
-    color: rgba(6, 121, 228, 0.8);
-    width: 41px;
-    height: 41px;
-    padding-top: 7px;
-    border-radius: 50%;
-    font-size: 28px;
-    text-align: center;
-    vertical-align: middle;
-    margin-top: 2.5px;
-    margin-bottom: 2.5px;
-}
 
 
 /*----------------------------game page-----------------------*/
@@ -251,27 +213,51 @@ body {
     text-transform: uppercase;
 }
 
-/*--------------------------------------footer--------------------*/
-
-footer {
-    text-align: center;
-    padding-top: 7%;
-    padding-bottom: 5%;
-}
-
-.div-social {
-    text-align: center;
-}
-
 #start {
     text-align: center;
     padding-top: 5%;
 }
 
-#home, #game {
-    color: black;
+/*-------footer-------*/
+
+.footer {
+    position: static;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: transparent;
+    margin-bottom: 0;
+    margin-top: 15px;
+    padding-top: 4%;
 }
 
+.social {
+    text-align: center;
+    padding-right: 200px;
+    padding-left: 200px;
+}
+
+.div-social {
+    width: 100%;
+    margin: auto !important;
+    text-align: center;
+}
+
+.div-social i  {
+    display: inline-block;
+    box-shadow: 0px 0px 2px #888;
+    background-color: rgba(214, 255, 245, 0.6);
+    color: rgba(6, 121, 228, 0.8);
+    width: 41px;
+    height: 41px;
+    padding-top: 7px;
+    border-radius: 50%;
+    font-size: 28px;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 2.5px;
+    margin-bottom: 2.5px;
+}
 
 
 @media (min-width: 376px) and (max-width: 1024px) {
@@ -296,8 +282,6 @@ footer {
     font-weight: 900;
     text-shadow: 3px 3px black;
     }  
-
-
 }
 
 
