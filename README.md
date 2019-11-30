@@ -20,5 +20,32 @@ In order to see some of this project mockups, please find them inside the Mockup
 
 The webpage structure has been created in only one HTML file divided in 2 main sections: the home page and the game page.
 Depending on which of them the user is, the other one is hidded.
+These 2 section have in common the same navbar (with the game title and the 2 buttons related to the 2 main sections) and the same footer 
+where you can find 3 social media links related to my profiles of Instagram, LinkedIN and Facebook 
 All the interctive functions are stored in the JS file which contains both JS and jQuery.
 The whole webpage is finally styled by a dedicated CSS file.
+
+### Home page
+
+The home page is enterely contained in its own div. It is divided in 2 parts:
+    - the article which explains the history and birth of the Hangman game
+    - a little box containing the hangman stand drawing and a button that brings the player directly to the game page
+
+### Game page
+
+The game page, as the home one, is contained into its own div and divided in 3 main parts:
+    - the game rules
+    - the actual game section with:
+        - a canvas element where the hangman will be drawn step by step
+        - the letter bank which are all buttons that when clicked activates an event listener in JS and runs the related functions
+        -the Start button, another event listener that when clicked makes the game begin
+
+## Existing Features
+
+The most important part of this project is the interaction that the user can have with the webpage. Being a game, the user will be part
+of the game he/she is playing. The victory or loss depends on the ability of the player in guessing the right word.
+When the Start button is clicked, the game chooses one word completely randomly from an array containing many city names.
+The word wont be displayed but in its place some underscores will be shown. The underscores number depend on how many letters the word contains.
+Every time the player guesses a letter, this will replace the underscore in the exact location.
+If the letter is a wrong one, a function will be called and a piece of the hangman will be drawn.
+If the user looses, the correct word is completely displayed. 
