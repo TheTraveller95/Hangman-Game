@@ -154,6 +154,10 @@ body {
     padding-top: 1.5%;
 }
 
+.topic {
+    font-weight: bold;
+}
+
 #game-box {
     text-align: center;
 }

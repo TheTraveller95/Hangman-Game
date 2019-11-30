@@ -48,4 +48,39 @@ When the Start button is clicked, the game chooses one word completely randomly 
 The word wont be displayed but in its place some underscores will be shown. The underscores number depend on how many letters the word contains.
 Every time the player guesses a letter, this will replace the underscore in the exact location.
 If the letter is a wrong one, a function will be called and a piece of the hangman will be drawn.
-If the user looses, the correct word is completely displayed. 
+If the user wins or looses, the correct word will be completely displayed. 
+
+## Technologies used
+
+- bootstrap
+- fontawesome
+- jQuery
+
+## Testing
+
+
+
+## Deployment
+
+The project deployment has been done using GitHub pages. The pubblic accessible web link of my project has been deployed by going to 
+GitHub --> Ecuador repository --> Settings --> scrolling down until GitHub Pages and changing the first option from None to Master Branch.
+
+In order to run the code locally you need to click on the Clone or Download button. There you have 2 option, or download the zip directly 
+or run the command "git clone https://github.com/TheTraveller95/Hangman-Game.git" in your machine's terminal after having navigated to the folder 
+you want to save the code into.
+
+## Credits
+
+### Content
+
+- The content of the game history has been copied and rearranged from the site https://www.quora.com/What-is-the-origin-of-the-game-hangman
+- The HTML and CSS code for the footer has been copied and rearranged from my previous project named Ecuador
+
+### Media
+
+The background image of the entire webpage can be found here https://www.123rf.com/clipart-vector/artwork_alphabet.html?alttext=1&orderby=4&start=100&sti=nf0c7fjfa3k7me26vs|&mediapopup=44790713
+
+## Acknowledgements
+
+-   For this project I got the inspiration viewing the following YouTube video https://youtu.be/ZtNyfGyS00M
+-   About the coding related technical knowledge, the https://www.w3schools.com and https://stackoverflow.com/ websites in addition to the help received from the Code Institute tutors and mentor really helped me a lot.
