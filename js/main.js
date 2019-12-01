@@ -63,6 +63,21 @@ $('#game').click(function(){
     playNow();
 })
 
+function backToNormal (){
+
+    ctx =   document.getElementById("hangman-game").getContext('2d'); //clear the hangman drowing
+            ctx.clearRect(175, 45, 90, 80);
+
+    document.getElementById("you-won").style.display='none';
+    document.getElementById('you-lost').style.display = 'none';
+   
+    letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+    letters.forEach(function (letter){
+        document.getElementById(letter).style.backgroundColor="blue";
+        document.getElementById(letter).style.color="white";
+        document.getElementById(letter).disabled = false;
+    })
+}
 
 $("#start-button").click(function getRandomWord(){
     var randomWord =Math.floor(Math.random() * wordsIndex.length); //get random index from the array
@@ -79,7 +94,6 @@ $("#start-button").click(function getRandomWord(){
     document.getElementById('guess-word').style.display= 'block';
     guessLetter();
     backToNormal();
-    console.log(splitLettersArray);
 })
 
 
@@ -106,17 +120,7 @@ function guessLetter (letter){ //function called once the letters are clicked
                 newSplitLetterArray.splice(indices[t],1,letter) //replace the "_" in the right location with the clicked letter
                 }
                 xy = newSplitLetterArray.toString().replace(/,/gi, " ");
-                var xyArray = xy.split(" ")
-                for(let i=0;i<xyArray.length;i++){
-                    won = xyArray.includes("_")
-                    if(won == false){ //check if the entire word has been guest
-                        var xyArray=[];
-                        backToNormal();
-                        happyman();
-                        document.getElementById("you-won").style.display='block';
-                        document.getElementById('start-button').innerHTML= document.getElementById('start-button').innerHTML.replace('Start','Restart');
-                    }
-                }
+                
                 return xy;
             }
             var myVar = correctLetterFunction()
@@ -131,27 +135,27 @@ function guessLetter (letter){ //function called once the letters are clicked
             document.getElementById(x).style.color="transparent"; //change the color of the clicked letter button 
             document.getElementById(x).disabled= true; //disable the button after having cliked it
         } 
+
+        var xyArray = xy.split(" ")
+        for(let i=0;i<xyArray.length;i++){
+            won = xyArray.includes("_")
+            if(won == false){ //check if the entire word has been guest
+                var xyArray=[];
+                backToNormal();
+                happyman();
+                document.getElementById("you-won").style.display='block';
+                document.getElementById('start-button').innerHTML= document.getElementById('start-button').innerHTML.replace('Start','Restart');
+                letters.forEach(function (letter){
+                    document.getElementById(letter).disabled = true;
+                })
+            }
+        }
     } 
 }
 
 
 
-function backToNormal (){
 
-    ctx =   document.getElementById("hangman-game").getContext('2d'); //clear the hangman drowing
-            ctx.clearRect(175, 45, 90, 80);
-
-    document.getElementById("you-won").style.display='none';
-    document.getElementById('you-lost').style.display = 'none';
-
-    var letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-
-    letters.forEach(function (letter){
-        document.getElementById(letter).style.backgroundColor="blue";
-        document.getElementById(letter).style.color="white";
-        document.getElementById(letter).disabled = false;
-    })
-}
 
 function hangman(){
 
@@ -207,6 +211,9 @@ function hangman(){
        document.getElementById('you-lost').style.display = 'block';
        document.getElementById('guess-word').innerHTML=splitLettersArray.toString().replace(/,/gi, " ");
        document.getElementById('start-button').innerHTML= document.getElementById('start-button').innerHTML.replace('Start','Restart');
+       letters.forEach(function (letter){
+                    document.getElementById(letter).disabled = true;
+                })
     }
 }
 
