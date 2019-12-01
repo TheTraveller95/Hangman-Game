@@ -134,9 +134,6 @@ body {
 }
 
 
-
-
-
 /*----------------------------game page-----------------------*/
 
 .how-to-play > article {
@@ -265,6 +262,7 @@ body {
     margin-bottom: 2.5px;
 }
 
+/*---------------------------media query------------------------*/
 
 @media (min-width: 376px) and (max-width: 1024px) {
     .main-title {
@@ -389,7 +387,6 @@ body {
         margin-left: auto !important;
         margin-right: auto !important;
     }
-    
 }
 
 

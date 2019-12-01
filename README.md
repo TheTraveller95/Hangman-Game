@@ -52,13 +52,22 @@ If the user wins or looses, the correct word will be completely displayed.
 
 ## Technologies used
 
-- bootstrap
-- fontawesome
+- Bootstrap
+- Fontawesome
 - jQuery
 
 ## Testing
 
-
+The first tests about the good website functionality have been done locally, using the Google Chrome tool. Using it I was able to test the 
+project trough a big device variety and in a responsive environment. Once everyhting looked good in the Chrome environmnet, the project has 
+been tested in the others browsers (IE and Edge) The wesite has then been tested in phisical differet devices (iPad, iPhone 8, iPhone 11 and 
+Honor 9) and after the good feedback, it has been sent to multiple contacts in order to test it in more devices as possible. All of them have been 
+given some specific tasks in order to test each one of the critical features of the project.
+The main issues have been found in the game page. The most critical one was that after winning or loosing, the letter buttons kept being
+clickable.
+The other problem come out from the feedbacks was the difficulty in understanding how to restart the game after having won or lost because 
+there was only a button saying START.
+The issues have been solved succesfully. 
 
 ## Deployment
 

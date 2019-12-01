@@ -96,8 +96,6 @@ $("#start-button").click(function getRandomWord(){
     backToNormal();
 })
 
-
-
 function guessLetter (letter){ //function called once the letters are clicked
     x = letter
 
@@ -120,7 +118,6 @@ function guessLetter (letter){ //function called once the letters are clicked
                 newSplitLetterArray.splice(indices[t],1,letter) //replace the "_" in the right location with the clicked letter
                 }
                 xy = newSplitLetterArray.toString().replace(/,/gi, " ");
-                
                 return xy;
             }
             var myVar = correctLetterFunction()
@@ -203,17 +200,16 @@ function hangman(){
     }
 
     if(newWrongLetterArray.length==7){
-       alert("You have one more shot! Click OK to continue")
+       alert("You have one more shot! Click OK/CLOSE to continue")
     }
 
     if(newWrongLetterArray.length==8){
-       alert("you lost: GAME OVER :(  Click START to keep playing");
        document.getElementById('you-lost').style.display = 'block';
        document.getElementById('guess-word').innerHTML=splitLettersArray.toString().replace(/,/gi, " ");
        document.getElementById('start-button').innerHTML= document.getElementById('start-button').innerHTML.replace('Start','Restart');
        letters.forEach(function (letter){
-                    document.getElementById(letter).disabled = true;
-                })
+            document.getElementById(letter).disabled = true;
+        })
     }
 }
 
