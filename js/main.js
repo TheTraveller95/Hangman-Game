@@ -1,6 +1,6 @@
-var wordsIndex = ["m i a m i","g u a y a q u i l","d u b l i n","t u r i n","m o s c o w", "q u i t o","b e r l i n","p r a g u e","m i l a n","m a d r i d","l i s b o n","p a r i s","r o m e","b r a s i l i a","l i m a",
-"c h i c a g o","b o s t o n","s a n t i a g o","b o g o t a","t o k y o","p h i l a d e l p h i a","m a n h a t t a n","p a n a m a","t o r o n t o","b e i j i n g","l o n d o n","a m s t e r d a m","b a n g k o k","s y d n e y",
-"h o u s t o n","n a s h v i l l e","m o n t e r r e y","d u b a i","b e l f a s t","b a r c e l o n a","a t h e n s","o s l o","s i n g a p o r e","n a i r o b i","h o n o l u l u","c a l i","m o n t e v i d e o"]; //test words
+var wordsIndex = ["miami","guayaquil","dublin","turin","moscow", "quito","berlin","prague","milan","madrid","lisbon","paris","rome","brasilia","lima",
+"chicago","boston","santiago","bogota","tokyo","philadelphia","manhattan","panama","toronto","beijing","london","amsterdam","bangkok","sydney",
+"houston","nashville","monterrey","dubai","belfast","barcelona","athens","oslo","singapore","nairobi","honolulu","cali","montevideo"]; //test words
 
 document.onload=firstLoading();
 wrongLetterArray = []
@@ -83,7 +83,7 @@ $("#start-button").click(function getRandomWord(){
     var randomWord =Math.floor(Math.random() * wordsIndex.length); //get random index from the array
     var wordToBeGuest = wordsIndex[randomWord]; //get the word related to the random index
     splitLettersArray = []
-    var splitLetters = wordToBeGuest.split(" ");
+    var splitLetters = wordToBeGuest.split(""); //divides all the letters inside the word to be guest
     splitLettersArray.push(splitLetters);
     newSplitLetterArray = splitLetters.slice() //ne array for not chainging the original one
     newSplitLetterArray.fill('_') //replace the element inside the clone array with a _
