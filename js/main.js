@@ -66,7 +66,7 @@ $('#game').click(function(){
 function backToNormal (){
 
     ctx =   document.getElementById("hangman-game").getContext('2d'); //clear the hangman drowing
-            ctx.clearRect(175, 45, 90, 80);
+            ctx.clearRect(173, 45, 100, 80);
 
     document.getElementById("you-won").style.display='none';
     document.getElementById('you-lost').style.display = 'none';
@@ -133,25 +133,29 @@ function guessLetter (letter){ //function called once the letters are clicked
             document.getElementById(x).disabled= true; //disable the button after having cliked it
         } 
 
-        var xyArray = xy.split(" ")
+        xyArray = xy.split(" ")
         for(let i=0;i<xyArray.length;i++){
             won = xyArray.includes("_")
             if(won == false){ //check if the entire word has been guest
-                var xyArray=[];
-                backToNormal();
-                happyman();
-                document.getElementById("you-won").style.display='block';
-                document.getElementById('start-button').innerHTML= document.getElementById('start-button').innerHTML.replace('Start','Restart');
-                letters.forEach(function (letter){
-                    document.getElementById(letter).disabled = true;
-                })
+                youWon();
             }
         }
     } 
 }
 
 
-
+function youWon (){
+    xyArray=[];
+    newSplitLetterArray.fill('_');
+    delete xy;
+    backToNormal();
+    happyman();
+    document.getElementById("you-won").style.display='block';
+    document.getElementById('start-button').innerHTML= document.getElementById('start-button').innerHTML.replace('Start','Restart');
+    letters.forEach(function (letter){
+        document.getElementById(letter).disabled = true;
+    })
+}
 
 
 function hangman(){
