@@ -3,8 +3,8 @@ var wordsIndex = ["miami","guayaquil","dublin","turin","moscow", "quito","berlin
 "houston","nashville","monterrey","dubai","belfast","barcelona","athens","oslo","singapore","nairobi","honolulu","cali","montevideo"]; //test words
 
 document.onload=firstLoading();
-wrongLetterArray = []
-newWrongLetterArray = wrongLetterArray.slice()
+wrongLetterArray = [];
+newWrongLetterArray = wrongLetterArray.slice();
 
 function firstLoading(){
     document.getElementById("home-page");
@@ -28,14 +28,14 @@ function playNow(){
     document.getElementById('guess-word').style.display= 'none';
     if (document.getElementById('start-button').innerHTML= 'Restart'){
         document.getElementById('start-button').innerHTML= document.getElementById('start-button').innerHTML.replace('Restart','Start');
-    };
+    }
     draw1();
     backToNormal();
 }
 
 $("#play-now-link").click(function(){
     playNow();
-})
+});
 
 /*document.getElementsByClassName('box').addEventListener('click', function(){
     if(getRandomWord ===undefined ){
@@ -47,7 +47,7 @@ $('.box').click(function(){
     if(newSplitLetterArray===undefined ){
         alert('click on Start');
     }
-}) // DO NOT WORK
+}); // DO NOT WORK
 
 $('#home').click(function(){
     document.getElementById("home-page").style.display='block';
@@ -57,11 +57,11 @@ $('#home').click(function(){
     document.getElementById('home').style.fontWeight= 'bold';
     document.getElementById('game').style.fontWeight= 'normal';   
     draw();
-})
+});
 
 $('#game').click(function(){
     playNow();
-})
+});
 
 function backToNormal (){
 
@@ -71,40 +71,40 @@ function backToNormal (){
     document.getElementById("you-won").style.display='none';
     document.getElementById('you-lost').style.display = 'none';
    
-    letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+    letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
     letters.forEach(function (letter){
         document.getElementById(letter).style.backgroundColor="blue";
         document.getElementById(letter).style.color="white";
         document.getElementById(letter).disabled = false;
-    })
+    });
 }
 
 $("#start-button").click(function getRandomWord(){
     var randomWord =Math.floor(Math.random() * wordsIndex.length); //get random index from the array
     var wordToBeGuest = wordsIndex[randomWord]; //get the word related to the random index
-    splitLettersArray = []
+    splitLettersArray = [];
     var splitLetters = wordToBeGuest.split(""); //divides all the letters inside the word to be guest
     splitLettersArray.push(splitLetters);
-    newSplitLetterArray = splitLetters.slice() //ne array for not chainging the original one
-    newSplitLetterArray.fill('_') //replace the element inside the clone array with a _
-    var underscore = newSplitLetterArray.toString().replace(/,/gi, " ")
-    var underscore2 = underscore.split()
-    newWrongLetterArray=[]
+    newSplitLetterArray = splitLetters.slice(); //ne array for not chainging the original one
+    newSplitLetterArray.fill('_'); //replace the element inside the clone array with a _
+    var underscore = newSplitLetterArray.toString().replace(/,/gi, " ");
+    var underscore2 = underscore.split();
+    newWrongLetterArray=[];
     document.getElementById('guess-word').innerHTML = underscore2;
     document.getElementById('guess-word').style.display= 'block';
     guessLetter();
     backToNormal();
-})
+});
 
 function guessLetter (letter){ //function called once the letters are clicked
-    x = letter
+    x = letter;
 
     for(let i=0;i<splitLettersArray.length;i++){ 
-        var test = splitLettersArray[i].includes(letter)
+        var test = splitLettersArray[i].includes(letter);
 
         if (test==true){  //check if the word in the array contain the clicked letter
             function correctLetterFunction (){
-                newSplitLetterArray.slice()
+                newSplitLetterArray.slice();
                 var indices = [];
                 var newSplitLettersArray2 = splitLettersArray.slice();
                 var wordArray = newSplitLettersArray2.toString().replace(/,/gi, "");
@@ -115,12 +115,12 @@ function guessLetter (letter){ //function called once the letters are clicked
                 idx = wordArray.indexOf(l, idx + 1);
                 }
                 for(let t=0;t<indices.length;t++){        
-                newSplitLetterArray.splice(indices[t],1,letter) //replace the "_" in the right location with the clicked letter
+                newSplitLetterArray.splice(indices[t],1,letter); //replace the "_" in the right location with the clicked letter
                 }
                 xy = newSplitLetterArray.toString().replace(/,/gi, " ");
                 return xy;
             }
-            var myVar = correctLetterFunction()
+            var myVar = correctLetterFunction();
             document.getElementById('guess-word').innerHTML = myVar; //it displays the word
             document.getElementById(x).style.backgroundColor="green"; //change the color of the clicked letter button 
             document.getElementById(x).style.color="transparent"; //change the color of the clicked letter button 
@@ -133,15 +133,16 @@ function guessLetter (letter){ //function called once the letters are clicked
             document.getElementById(x).disabled= true; //disable the button after having cliked it
         } 
 
-        xyArray = xy.split(" ")
+        xyArray = xy.split(" ");
         for(let i=0;i<xyArray.length;i++){
-            won = xyArray.includes("_")
+            won = xyArray.includes("_");
             if(won == false){ //check if the entire word has been guest
                 youWon();
             }
         }
     } 
 }
+
 
 
 function youWon (){
@@ -154,7 +155,7 @@ function youWon (){
     document.getElementById('start-button').innerHTML= document.getElementById('start-button').innerHTML.replace('Start','Restart');
     letters.forEach(function (letter){
         document.getElementById(letter).disabled = true;
-    })
+    });
 }
 
 
@@ -164,7 +165,7 @@ function hangman(){
 
     if(newWrongLetterArray.length==2){
             ctx.beginPath();
-            ctx.arc(220,60,10,0,2*Math.PI)
+            ctx.arc(220,60,10,0,2*Math.PI);
             ctx.stroke();
     }
 
@@ -204,7 +205,7 @@ function hangman(){
     }
 
     if(newWrongLetterArray.length==7){
-       alert("You have one more shot! Click OK/CLOSE to continue")
+       alert("You have one more shot! Click OK/CLOSE to continue");
     }
 
     if(newWrongLetterArray.length==8){
@@ -213,7 +214,7 @@ function hangman(){
        document.getElementById('start-button').innerHTML= document.getElementById('start-button').innerHTML.replace('Start','Restart');
        letters.forEach(function (letter){
             document.getElementById(letter).disabled = true;
-        })
+        });
     }
 }
 
@@ -222,7 +223,7 @@ function happyman(){
     draw1();
 
     ctx.beginPath();
-            ctx.arc(220,75,10,0,2*Math.PI)
+            ctx.arc(220,75,10,0,2*Math.PI);
             ctx.stroke();
     
     ctx.beginPath();
@@ -306,5 +307,5 @@ function draw1(){
 }
 
 $('#hamburger').click(function(){
-    $('#navbarTogglerDemo03').slideToggle()
-})
+    $('#navbarTogglerDemo03').slideToggle();
+});
