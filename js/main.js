@@ -34,6 +34,10 @@ function playNow(){
     backToNormal();
 }
 
+$('#hide').click(function(){
+    $('#rules').slideToggle();
+})
+
 $("#play-now-link").click(function(){
     playNow();
 });
