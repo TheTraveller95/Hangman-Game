@@ -72,7 +72,7 @@ body {
     padding-top: 1.5%;
 }
 
-.game-story > article {
+.game-story > p {
     font-family: 'arial black';
     font-size: 1.19em;
     font-weight: 600;
@@ -136,7 +136,7 @@ body {
 
 /*----------------------------game page-----------------------*/
 
-.how-to-play > article {
+.how-to-play > p {
     font-family: 'arial black';
     font-size: 1.19em;
     font-weight: bold;
@@ -303,7 +303,7 @@ body {
 
 @media (min-width: 1025px) {
 
-    .how-to-play > article {
+    .how-to-play > p {
     font-family: 'arial black';
     font-size: 1.19em;
     font-weight: 600;
@@ -313,7 +313,7 @@ body {
     padding-top: 3%;
     }
 
-    .game-story> article {
+    .game-story> p {
     font-family: 'arial black';
     font-size: 1.19em;
     font-weight: 600;

@@ -5,6 +5,7 @@ var wordsIndex = ["miami","guayaquil","dublin","turin","moscow", "quito","berlin
 document.onload=firstLoading();
 wrongLetterArray = [];
 newWrongLetterArray = wrongLetterArray.slice();
+letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 
 function firstLoading(){
     document.getElementById("home-page");
@@ -37,18 +38,6 @@ $("#play-now-link").click(function(){
     playNow();
 });
 
-/*document.getElementsByClassName('box').addEventListener('click', function(){
-    if(getRandomWord ===undefined ){
-        alert('click on Start')
-    }
-})*/
-
-$('.box').click(function(){
-    if(newSplitLetterArray===undefined ){
-        alert('click on Start');
-    }
-}); // DO NOT WORK
-
 $('#home').click(function(){
     document.getElementById("home-page").style.display='block';
     document.getElementById("footer-section").style.display='block';
@@ -71,7 +60,18 @@ function backToNormal (){
     document.getElementById("you-won").style.display='none';
     document.getElementById('you-lost').style.display = 'none';
    
-    letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+    disableLetters();
+}
+
+function disableLetters (letter){
+    letters.forEach(function (letter){
+        document.getElementById(letter).style.backgroundColor="blue";
+        document.getElementById(letter).style.color="white";
+        document.getElementById(letter).disabled = true;
+    });
+}
+
+function enableLetters (letter){
     letters.forEach(function (letter){
         document.getElementById(letter).style.backgroundColor="blue";
         document.getElementById(letter).style.color="white";
@@ -80,6 +80,7 @@ function backToNormal (){
 }
 
 $("#start-button").click(function getRandomWord(){
+    enableLetters();
     var randomWord =Math.floor(Math.random() * wordsIndex.length); //get random index from the array
     var wordToBeGuest = wordsIndex[randomWord]; //get the word related to the random index
     splitLettersArray = [];
@@ -102,7 +103,7 @@ function guessLetter (letter){ //function called once the letters are clicked
     for(let i=0;i<splitLettersArray.length;i++){ 
         var test = splitLettersArray[i].includes(letter);
 
-        if (test==true){  //check if the word in the array contain the clicked letter
+        if (test){  //check if the word in the array contain the clicked letter
             function correctLetterFunction (){
                 newSplitLetterArray.slice();
                 var indices = [];
