@@ -150,6 +150,16 @@ body {
     font-style: italic;
     font-family: 'arial black';
     padding-top: 1.5%;
+    margin-bottom: 0;
+}
+
+.how-to-play > .show-more-less {
+    margin: auto;
+    text-align: center;
+    font-style: italic;
+    font-family: 'arial black';
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
 }
 
 .topic {
@@ -297,6 +307,10 @@ body {
 
     #home-page {
         height: calc(100vh - 102.3px)!important;
+    }
+
+    #game-page {
+        height: calc(120vh - 102.3px)!important;
     }
 }
 

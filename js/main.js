@@ -30,12 +30,22 @@ function playNow(){
     if (document.getElementById('start-button').innerHTML= 'Restart'){
         document.getElementById('start-button').innerHTML= document.getElementById('start-button').innerHTML.replace('Restart','Start');
     }
+    document.getElementById('show-more').style.display = 'block';
+    document.getElementById('show-less').style.display = 'none';
     draw1();
     backToNormal();
 }
 
-$('#hide').click(function(){
+$('#show-more').click(function(){
     $('#rules').slideToggle();
+    document.getElementById('show-more').style.display = 'none';
+    document.getElementById('show-less').style.display = 'block';
+})
+
+$('#show-less').click(function(){
+    $('#rules').slideToggle();
+    document.getElementById('show-more').style.display = 'block';
+    document.getElementById('show-less').style.display = 'none';   
 })
 
 $("#play-now-link").click(function(){
@@ -56,6 +66,7 @@ $('#game').click(function(){
     playNow();
 });
 
+//will bring the game situation back to the beginning after having won/lost/clicked on Start
 function backToNormal (){
 
     ctx =   document.getElementById("hangman-game").getContext('2d'); //clear the hangman drowing
@@ -83,6 +94,7 @@ function enableLetters (letter){
     });
 }
 
+// extract a random word from the wordsIndex array and display it changing all the letters with underscores
 $("#start-button").click(function getRandomWord(){
     enableLetters();
     var randomWord =Math.floor(Math.random() * wordsIndex.length); //get random index from the array
@@ -101,7 +113,8 @@ $("#start-button").click(function getRandomWord(){
     backToNormal();
 });
 
-function guessLetter (letter){ //function called once the letters are clicked
+// called once the letters are clicked, will check if the clicked letter is included in the word to be guessed 
+function guessLetter (letter){ 
     x = letter;
 
     for(let i=0;i<splitLettersArray.length;i++){ 
@@ -141,15 +154,14 @@ function guessLetter (letter){ //function called once the letters are clicked
         xyArray = xy.split(" ");
         for(let i=0;i<xyArray.length;i++){
             won = xyArray.includes("_");
-            if(won == false){ //check if the entire word has been guest
+            if(won == false){ //check if the entire word has been guessed
                 youWon();
             }
         }
     } 
 }
 
-
-
+// It will check if in he word to be guessed all the letters have been guessed
 function youWon (){
     xyArray=[];
     newSplitLetterArray.fill('_');
@@ -163,7 +175,7 @@ function youWon (){
     });
 }
 
-
+// It will draw the hangman step by step depending on how many wrong letters have been choosen
 function hangman(){
 
     draw1();
@@ -223,6 +235,7 @@ function hangman(){
     }
 }
 
+//It will draw the happy man after winning
 function happyman(){
     
     draw1();
@@ -257,6 +270,7 @@ function happyman(){
             ctx.stroke();
 }
 
+//It draws the hangman stand in the home page
 function draw(){
     var ctx = document.getElementById("hangman-draw").getContext('2d');
         ctx.fillStyle = "transparent";
@@ -284,6 +298,7 @@ function draw(){
             ctx.stroke();
 }
 
+//It draws the hangman stand in the game page
 function draw1(){
     ctx = document.getElementById("hangman-game").getContext('2d');
         ctx.fillStyle = "transparent";
