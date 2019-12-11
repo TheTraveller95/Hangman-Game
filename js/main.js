@@ -32,6 +32,7 @@ function playNow(){
     }
     document.getElementById('show-more').style.display = 'block';
     document.getElementById('show-less').style.display = 'none';
+    document.getElementById('rules').style.display = 'none';
     draw1();
     backToNormal();
 }
