@@ -129,13 +129,16 @@ function guessLetter (letter){
                 var wordArray = newSplitLettersArray2.toString().replace(/,/gi, "");
                 var l = letter;
                 var idx = wordArray.indexOf(l);
+
                 while (idx != -1) {
-                indices.push(idx);
-                idx = wordArray.indexOf(l, idx + 1);
+                    indices.push(idx);
+                    idx = wordArray.indexOf(l, idx + 1);
                 }
+
                 for(let t=0;t<indices.length;t++){        
-                newSplitLetterArray.splice(indices[t],1,letter); //replace the "_" in the right location with the clicked letter
+                    newSplitLetterArray.splice(indices[t],1,letter); //replace the "_" in the right location with the clicked letter
                 }
+
                 xy = newSplitLetterArray.toString().replace(/,/gi, " ");
                 return xy;
             }
@@ -144,6 +147,7 @@ function guessLetter (letter){
             document.getElementById(x).style.backgroundColor="green"; //change the color of the clicked letter button 
             document.getElementById(x).style.color="transparent"; //change the color of the clicked letter button 
             document.getElementById(x).disabled= true; //disable the button after having cliked it
+        
         } else{ 
             newWrongLetterArray.splice(0,0,letter);
             hangman();
@@ -153,8 +157,10 @@ function guessLetter (letter){
         } 
 
         xyArray = xy.split(" ");
+
         for(let i=0;i<xyArray.length;i++){
             won = xyArray.includes("_");
+            
             if(won == false){ //check if the entire word has been guessed
                 youWon();
             }
